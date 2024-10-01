@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "name" : "express",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "pug": "^3.0.3"
+  },
+  "bundleDependencies": [
+    "pug"
+  ]
+}
