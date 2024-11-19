@@ -1,13 +1,17 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors"; // Import the cors package
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
 const app = express();
 dotenv.config();
 const port = process.env.PORT || 5000;
 
-import { connectDB } from "./config/db.js";
+const userRoutes = require("./routes/userRoutes");
+const productRoutes = require("./routes/productRoutes");  
+const orderRoutes = require("./routes/orderRoutes");
 
-import morgan from "morgan";
+const {connectDB} = require("./config/db");
+
+const morgan = require("morgan");
 
 connectDB();
 
@@ -16,8 +20,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-app.use("/api/countries", countryRoute);
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
+
 });

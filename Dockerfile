@@ -1,20 +1,44 @@
-# Step 1: Use the official Node.js image as the base image
-FROM node:18-alpine
+# Step 1: Build the React app
+FROM node:18-alpine AS build
 
-# Step 2: Set the working directory inside the container
-WORKDIR /app
+# Set working directory for frontend
+WORKDIR /app/client
 
-# Step 3: Copy the package.json and package-lock.json files to the working directory
-COPY package*.json ./
-
-# Step 4: Install the dependencies inside the container
+# Copy package.json and install dependencies
+COPY client/package.json ./
 RUN npm install
 
-# Step 5: Copy the rest of the application files to the container
-COPY . .
+# Copy rest of the frontend files and build the production version
+COPY client/ ./
+RUN npm run build
 
-# Step 6: Expose the port your app runs on (3000 is default for Express)
-EXPOSE 3000
+# Step 2: Build the Express backend
+FROM node:18-alpine
 
-# Step 7: Set the default command to run your app
-CMD ["npm", "start"]
+# Install bun
+# Install curl and bash
+RUN apk add --no-cache curl bash
+
+# Install bun
+RUN curl -fsSL https://bun.sh/install | bash
+
+# Set PATH for bun (so it's available globally)
+ENV PATH="/root/.bun/bin:$PATH"
+
+# Set working directory for backend
+WORKDIR /app
+
+# Copy package.json and install backend dependencies
+COPY server/package.json ./
+RUN npm install
+# Copy backend source code
+COPY server/ ./
+
+# Copy the built React app from the previous stage into the backend's public folder
+COPY --from=build /app/client/build ./public
+
+# Expose the server port
+EXPOSE 5055
+
+# Run the Express app
+CMD ["npm", "run", "start"]
