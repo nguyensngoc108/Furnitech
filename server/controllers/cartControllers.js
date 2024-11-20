@@ -25,7 +25,7 @@ const getCartInfo = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
-    let { userId, productId, quantity } = req.body;
+    let { userId, productId, quantity, price } = req.body;
 
     const cart = await Cart.findOne({ userId });
 
@@ -36,10 +36,10 @@ const addToCart = async (req, res) => {
           {
             productId,
             quantity,
-            price: productId.price,
+            price,
           },
         ],
-        totalPrice: productId.price * quantity,
+        totalPrice: price * quantity,
       });
 
       await newCart.save();

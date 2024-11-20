@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+let softDelete = require('mongoosejs-soft-delete');
 
 const Schema = mongoose.Schema;
 
@@ -28,7 +29,6 @@ const CartSchema = new Schema({
     ],
     totalPrice: {
         type: Number,
-        required: true,
         default: 0
     },
     createdAt: {
@@ -36,5 +36,7 @@ const CartSchema = new Schema({
         default: Date.now
     }
 });
+
+CartSchema.plugin(softDelete);
 
 module.exports = mongoose.model('Cart', CartSchema);
