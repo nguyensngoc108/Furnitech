@@ -43,6 +43,7 @@ const addOrder = async (req, res) => {
             user_id: order.user_id,
             quantity: order.quantity,
             price: order.price,
+            customer: order.customer,
         });
         await newOrder.save();
         res.status(200).json({
