@@ -13,7 +13,7 @@ const App = () => {
       <section className='w-[1920px] h-[6178px] bg-brown-400'>
         <section
           className='w-[1920px] h-[1024px] shrink-0'
-     
+          style={{ backgroundImage: `url('./assets/Container.jpg')` }}
         >
           <section className='
           
@@ -47,7 +47,8 @@ const App = () => {
             {/* Heading */}
 
             <section className='
-              hero  flex w-[1297px] p-[60px] flex-col justify-center items-start  font-DM Sans gap-10 
+              hero  flex flex-col justify-center items-start  font-DM Sans gap-10 
+              w-[868px] p-[60px]              
               rounded-[40px] border border-[rgba(255,255,255,0.30)] bg-gradient-to-r from-[rgba(255,255,255,0.10)] via-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.60)] backdrop-blur-[16px]
           '>
 
