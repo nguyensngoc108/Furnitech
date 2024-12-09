@@ -39,7 +39,7 @@ const addOrder = async (req, res) => {
     try {
         let order = req.body;
         let newOrder = new Order({
-            product: order.product,
+            product_id: order.product_id,
             user_id: order.user_id,
             quantity: order.quantity,
             price: order.price,
