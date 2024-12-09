@@ -24,6 +24,7 @@
     "mongoosejs-soft-delete": "^1.0.2",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
+    "server": "file:",
     "ucfirst": "^1.0.0",
     "uuid": "^10.0.0",
     "valid-url": "^1.0.9",
