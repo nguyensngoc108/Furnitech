@@ -21,6 +21,15 @@
         
         @apply mx-auto ;
     }
+    .search-box{
+       @apply absolute top-[110%] -right-full;
+    }
+    .search-box input {
+      @apply p-[10px] border-none outline-none rounded-md w-72 shadow-[var(--box-shadow)];
+    }
+    .search-box.active{
+      @apply right-4 transition duration-200 hover:bg-blue-500
+    }
 }
 
 @layer focus{
@@ -28,4 +37,6 @@
         @apply text-brown  ;
     }
 }
+
+
 

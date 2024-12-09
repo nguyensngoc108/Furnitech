@@ -1,17 +1,15 @@
 // src/components/header.js
 
-const menuLinks = [
-    "Home",
-    "Products",
-    "Blogs",
-    "About Us"
-];
+import { useState } from "react"
+
 
 const headers = ({ className, href, onClick, children, px }) => {
+    const [open, setOpen] = useState(false)
     return (
 
-        <div className="
+        <nav className="
          flex justify-between items-center   py-[32px] l-container 
+         md:bg-top bg-center
          ">
             <a
                 href="/"
@@ -26,28 +24,30 @@ const headers = ({ className, href, onClick, children, px }) => {
                     Furnitech
                 </span>
             </a>
-            <ul className=" 
+            <ul
+                className=" 
                 flex items-start  px gap-10  pl-[188px] pr-[188px] 
                 text-[18px]  font-bold leading-[30px]
-                transition-colors hover:text-color-brown
+                transition-all duration-300 ease-out 
+                text-brown-1000
             ">
-                {menuLinks.map((link) => (
-                    <li key={link}>
-                        <a href="#">{link}</a>
-                    </li>
-                ))}
+                <li><a href="#Home" class="hover:text-brown">Home</a></li>
+                <li><a href="#Products" class="hover:text-brown" >Products</a></li>
+                <li><a href="#Blogs" class="hover:text-brown">Blogs</a></li>
+                <li><a href="#About Us" class="hover:text-brown">About Us</a></li>
             </ul>
 
             <ul>
                 <li className=" 
                     flex justify-end items-center gap-6 w-{50px} h-{50px} pr-0 fill-brown-400 bg-brown-400
-                    
+                    cursor-default md:cursor-pointer
                 ">
 
                     <a
                         href="/"
+                        onClick={() => setOpen(!open)}
                     >
-                        <img src="./assets/search.svg" alt="find" className="fill-brown-400 bg-brown-400" />
+                        <img src="./assets/search.svg" name={`${open ? 'close' : 'search'}`} alt="find" className="fill-brown-400 bg-brown-400" />
                     </a>
                     <a
                         href="/"
@@ -62,8 +62,18 @@ const headers = ({ className, href, onClick, children, px }) => {
                 </li>
             </ul>
 
+            {/* Search nav */}
+            <ul
+                classname={`
+                md:hidden bg-brown-400 absolute w-full h-full bottom-0 py-24 pl-4
+                duration-300 ${open ? 'left-0' : 'left-[100%]'}
+                `}
+            >
 
-        </div>
+            </ul>
+
+        </nav>
+
 
 
 

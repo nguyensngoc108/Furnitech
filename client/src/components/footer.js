@@ -41,9 +41,9 @@ function Footer() {
                         </h1>
 
                         {/* Link Group  */}
-                        <div className='flex flex-col items-start gap-[18px]'>
+                        <div className='flex flex-col items-start gap-[18px] '>
                             <a href='/'
-                                className='flex items-start'>
+                                className='flex items-start '>
                                 <h1 className='
                                     text-neutral-text-gray font-DM Sans text-[18px] font-normal leading-[18px]
                                 '>
@@ -51,9 +51,10 @@ function Footer() {
                                 </h1>
                             </a>
                             <a href='/'
-                                className='flex items-start'>
+                                className='flex items-start '>
                                 <h1 className='
                                     text-neutral-text-gray font-DM Sans text-[18px] font-normal leading-[18px]
+                            
                                 '>
                                     Reviews
                                 </h1>

@@ -3,11 +3,12 @@ import React from 'react'
 const section = () => {
   return (
     <div className='
+    inline-flex justify-end items-start py-[22px] pl-[38.39px]  gap-[1071.61px] w-[382px] h-[74px]
     rounded-[0px_40px_40px_0px] bg-white bg-opacity-24 
-    inline-flex justify-end items-start pt-[22px] pb-[22px] pl-[38.39px] pr-0 gap-[1071.61px]
+    
     '>
       <h1 className='
-      text-gray-600 dark:text-gray-800 font-dm-sans text-base font-medium leading-[1.66] tracking-normal
+      text-neutral-text-gray   font-DM Sans text-[18px] font-normal leading-[30px] 
       '>
         Get 20% OFF on your first order!
       </h1>
