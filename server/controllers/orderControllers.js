@@ -61,8 +61,15 @@ const addOrder = async (req, res) => {
 const updateOrder = async (req, res) => {
     try {
         let order = req.body;
-        const updatedOrder = await Order.findByIdAndUpdate
-        (order._id, order, { new: true });
+        let orderId = req.params.orderId;
+        let updatedOrder = {
+            product_id: order.product_id,
+            user_id: order.user_id,
+            quantity: order.quantity,
+            price: order.price,
+            customer: order.customer,
+        };
+        await Order.findByIdAndUpdate(orderId, updatedOrder);
         res.status(200).json({
             success: true,
             data: updatedOrder,

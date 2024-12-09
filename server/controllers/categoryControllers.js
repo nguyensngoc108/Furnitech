@@ -54,10 +54,11 @@ const addCategory = async (req, res) => {
 const updateCategory = async (req, res) => {
     try {
         let category = req.body;
+        let categoryId = req.params.categoryId;
         let updatedCategory = {
             name: category.name,
         };
-        await Category.findByIdAndUpdate(category._id, updatedCategory);
+        await Category.findByIdAndUpdate(categoryId, updatedCategory);
         res.status(200).json({
             success: true,
             data: updatedCategory,
@@ -71,7 +72,7 @@ const updateCategory = async (req, res) => {
 
 const deleteCategory = async (req, res) => {
     try {
-        const { categoryId } = req.params;
+        let categoryId = req.params.categoryId;
         await Category.findByIdAndDelete(categoryId);
         res.status(200).json({
             success: true,

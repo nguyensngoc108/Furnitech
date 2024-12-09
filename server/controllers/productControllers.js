@@ -73,7 +73,6 @@ const addProduct = async (req, res) => {
       quantity: product.quantity,
       price: product.price,
       categoryId: product.categoryId,
-      image: product.image,
       isFeatured: product.isFeatured,
     });
     await newProduct.save();
@@ -91,6 +90,7 @@ const updateProduct = async (req, res) => {
     try {
         let product = req.body;
         let productId = req.params.productId;
+        let categoryId = req.params.categoryId;
         let updatedProduct = {
         name: product.name,
         description: product.description,

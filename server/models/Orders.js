@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
-  product: {
-    type: String,
+  product_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product",
     required: true,
   },
   user_id: {
@@ -39,6 +40,14 @@ const OrderSchema = new Schema({
 OrderSchema.virtual("user", {
   ref: "User",
   localField: "user_id",
+  foreignField: "_id",
+  justOne: true,
+});
+
+// virtual to product_id
+OrderSchema.virtual("product", {
+  ref: "Product",
+  localField: "product_id",
   foreignField: "_id",
   justOne: true,
 });
