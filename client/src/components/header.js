@@ -4,7 +4,7 @@ import { useState } from "react"
 
 
 const headers = ({ className, href, onClick, children, px }) => {
-    const [open, setOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
     return (
 
         <nav className="
@@ -43,34 +43,34 @@ const headers = ({ className, href, onClick, children, px }) => {
                     cursor-default md:cursor-pointer
                 ">
 
+                    {/* <a
+                        href="/"
+                    //     onClick={() => setOpen(!open)}
+                    // >
+                    //     <img src="./assets/search.svg" name={`${open ? 'close' : 'search'}`} alt="find" className="fill-brown-400 bg-brown-400" />
+                    </a> */}
                     <a
                         href="/"
-                        onClick={() => setOpen(!open)}
                     >
-                        <img src="./assets/search.svg" name={`${open ? 'close' : 'search'}`} alt="find" className="fill-brown-400 bg-brown-400" />
+                        <img src="./assets/person.svg" alt="person" className="fill-brown-400" />
                     </a>
                     <a
                         href="/"
                     >
-                        <img src="./assets/person.svg" alt="person" className="fill-brown-400 bg-brown-400" />
-                    </a>
-                    <a
-                        href="/"
-                    >
-                        <img src="./assets/shopping.svg" alt="store" className="fill-brown-400 bg-brown-400" />
+                        <img src="./assets/shopping.svg" alt="store" className="fill-brown-400" />
                     </a>
                 </li>
             </ul>
 
             {/* Search nav */}
-            <ul
+            {/* <ul
                 classname={`
                 md:hidden bg-brown-400 absolute w-full h-full bottom-0 py-24 pl-4
                 duration-300 ${open ? 'left-0' : 'left-[100%]'}
                 `}
             >
 
-            </ul>
+            </ul> */}
 
         </nav>
 

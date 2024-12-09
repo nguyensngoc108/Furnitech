@@ -13,11 +13,11 @@ const App = () => {
       <section className='w-[1920px] h-[6178px] bg-brown-400'>
         <section
           className='w-[1920px] h-[1024px] shrink-0'
-          style={{ backgroundImage: `url('./assets/Container.svg')` }}>
+     
+        >
           <section className='
           
          flex  flex-col justify-center items-center '
-
 
           >
 
