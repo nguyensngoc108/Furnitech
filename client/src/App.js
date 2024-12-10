@@ -11,142 +11,152 @@ const App = () => {
     <>
 
       <section className='w-[1920px] h-[6178px] bg-brown-400'>
-        <section className='
+        <section
+          className='w-[1920px] h-[1024px] shrink-0'
+
+          // Background
+          style={{ backgroundImage: `url('./assets/Container.jpg')` }}
+        >
+          <section className='
           
-         flex  flex-col justify-center items-center 
-         '>
-          {/* Background 1 */}
+         flex  flex-col justify-center items-center '
+
+          >
 
 
+            {/* Header 1 */}
 
-          {/* Header 1 */}
-
-          <div className="justify-between items-center  font-DM Sans ">
-            <Header />
+            <div className="justify-between items-center  font-DM Sans ">
+              <Header />
+            </div>
+          </section>
+          {/* Section */}
+          <div >
+            <Section />
           </div>
-        </section>
 
-        {/* Section */}
 
-        <div className='inline-flex justify-end items-start'>
-          <Section />
-        </div>
-
-        {/* Slider Header */}
-
-        <section className='
-         flex  flex-col justify-center items-center 
-         '>
-
-          {/* Heading */}
+          {/* Slider Header */}
 
           <section className='
-              hero  flex w-[1297px] p-[60px] flex-col justify-center items-start  font-DM Sans gap-10 
+         flex  flex-col justify-center items-center 
+         '>
+
+            {/* Heading */}
+
+            <section className='
+              
+              w-[868px] p-[60px] 
+              hero  flex flex-col justify-center items-start  font-DM Sans gap-10                            
               rounded-[40px] border border-[rgba(255,255,255,0.30)] bg-gradient-to-r from-[rgba(255,255,255,0.10)] via-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.60)] backdrop-blur-[16px]
           '>
 
-            {/* Frame 5  */}
-
-            <div
-              className=' 
-              flex flex-col items-start gap-4 self-stretch    
-            '>
-
-              {/* Frame 6 */}
+              {/* Frame 5  */}
 
               <div
-                className='
-              flex flex-col items-start gap-4
+                className=' 
+                  flex flex-col items-start gap-4 self-stretch  
             '>
-                <h1
+
+                {/* Frame 6 */}
+
+                <div
                   className='
+                    flex flex-col items-start gap-4 
+            '>
+                  <h1
+                    className='
                 
                 text-[68px] font-sans font-bold leading-[1.1] text-orange-400'
-                >
-                  Perfect Pieces {" "}
-                  <span
-                    className='
+                  >
+                    Perfect Pieces {" "}
+                    <span
+                      className='
                   
                   text-gray-500 dark:text-black text-[68px] font-dm-sans font-bold leading-[110%]'
-                  >
-                    for
-                  </span>
-                  <span
-                    className='
+                    >
+                      for
+                    </span>
+                    <span
+                      className='
                   flex 
                   text-gray-500 dark:text-black text-[68px] font-dm-sans font-bold leading-[110%]'
-                  >
-                    Every Corner You Love.
-                  </span>
-                </h1>
-                <h2 className='
-
-              text-neutral-500 font-medium text-2xl leading-[1.1] font-dm-san
+                    >
+                      Every Corner You Love.
+                    </span>
+                  </h1>
+                  <h2 className='
+                    w-[733.235px] h-[43px]
+                  text-neutral-500 font-medium  leading-[1.1] font-DM Sans text-[28px]
               '>
-                  where quality, style, and your vision all come together.
-                </h2>
+                    where quality, style, and your vision all come together.
+                  </h2>
+                </div>
               </div>
-            </div>
 
-            {/* Master Button */}
+              {/* Master Button */}
 
-            <a className='
+              <a className='
               flex w-[195px] px-9 py-6 justify-center items-center gap-2
             bg-brown rounded-[40px]
               '
-              // Link "Eplore Button"
-              href='/'
-            >
-              <h1 className='font-DM Sans text-white text-center text-[18px] font-bold leading-[18px]'>
-                Explore
-              </h1>
-              <img
-                className='
+                // Link "Eplore Button"
+                href='/'
+              >
+                <h1 className='font-DM Sans text-white text-center text-[18px] font-bold leading-[18px]'>
+                  Explore
+                </h1>
+                <img
+                  className='
                 flex w-[18px] h-[18px] px-[2.654px] py-[2.25px] justify-center items-center shrink-0
                 '
-                src='./assets/Arrow Right.png' alt='ArrowRight' />
-            </a>
+                  src='./assets/Arrow Right.png' alt='ArrowRight' />
+              </a>
 
 
-          </section>
+            </section>
 
-          {/* Product Details */}
+            {/* Product Details */}
 
-          <section className='
+            <section className='
             inline-flex flex-col items-end gap-2
           '>
-            <h1 className='
+              <h1 className='
               self-stretch
               text-black text-right text-[24px] font-semibold leading-[1.1]
               font-DM Sans
             '>
-              H&D Flower Lamp
-            </h1>
+                H&D Flower Lamp
+              </h1>
 
-            {/* Frame 8 */}
-            <div className='
+              {/* Frame 8 */}
+              <div className='
               flex items-center gap-6
             '>
-              {/* Frame 9 */}
-              <div className='
+                {/* Frame 9 */}
+                <div className='
                 flex pr-[6px] pl-[12px] justify-center items-center gap-[10px]
                 rounded-[100px] bg-white/25
               '>
-                <h2 className='text-[14px] font-DM Sans text-orange-400 font-extrabold leading-[1.1] [font-variant-ligatures:normal]'>
-                  -20%
-                </h2>
-              </div>
+                  <h2 className='text-[14px] font-DM Sans text-orange-400 font-extrabold leading-[1.1] [font-variant-ligatures:normal]'>
+                    -20%
+                  </h2>
+                </div>
 
-              <h1 className='
+                <h1 className='
                 flex w-[134px] h-[28px] flex-col justify-center
                  text-black text-right font-dm-sans text-3xl font-extrabold leading-tight 
               '>
-                199.99$
-              </h1>
-            </div>
-          </section>
-        </section>
+                  199.99$
+                </h1>
+              </div>
+            </section>
 
+
+          </section>
+
+
+        </section>
         {/* Why Choosing US */}
 
         <section className='
@@ -230,12 +240,14 @@ const App = () => {
           </div>
         </section>
 
+
         {/* Slide 2 */}
         <section className='flex  flex-col justify-center items-center '>
 
           {/* Header 2 */}
           <div>
             <Header />
+
           </div>
 
           {/* Categories By Spaces */}
@@ -392,7 +404,134 @@ const App = () => {
             {/* Frame 17 */}
             <section className='flex flex-col items-center gap-[60px] self-stretch'>
 
+              {/* Tab */}
+              <div className='
+                  flex justify-center items-start self-stretch
+                  transition-all duration-300 ease-out 
+                  text-brown-1000
+                '>
+
+                {/* Categories Tab */}
+                <ul className='flex-col w-[105px] flex items-center gap-3'>
+                  <li><a href="#Furniture" class="hover:text-brown" >Furniture</a></li>
+                </ul>
+                <ul className='flex-col w-[105px] flex items-center gap-3'>
+                  <li><a href="#Decoration" class="hover:text-brown" >Decoration</a></li>
+                </ul>
+                <ul className='flex-col w-[105px] flex items-center gap-3'>
+                  <li><a href="#Storage" class="hover:text-brown">Storage</a></li>
+
+                </ul>
+                <ul className='flex-col w-[105px] flex items-center gap-3'>
+
+                  <li><a href="#Lighting" class="hover:text-brown">Lighting</a></li>
+                </ul>
+              </div>
+
+              {/* Categories */}
+              <div className='w-[1219px] h-[477px]'>
+
+                {/* Product List */}
+                <div className='flex w-[931px] items-center gap-[28px]'>
+
+                  {/* Product Card */}
+                  <div className='flex w-[268px] flex-col items-center shrink-0 shadow-custom'>
+
+                    {/* Image  */}
+                    <div className='h-[240px] self-stretch border rounded-tl-[20px] rounded-tr-[20px] bg-white pl-[47px] pr-[47px] pt-[26.7px] pb-[9.26px]'>
+                      <img src='./assets/chair.png' alt='chair'
+                        className='w-[173.476px] h-[203.733px] shrink-0'
+                      />
+
+                      {/* Discount tag */}
+                      <div className='
+                        inline-flex p-2.5 justify-center items-center gap-2.5 rounded-lg
+                        bg-red
+                      '>
+                        <h1 className='
+                          text-brown-400 font-DM Sans text-[14px] font-normal leading-normal
+                        '>
+                          -38%
+                        </h1>
+
+                      </div>
+                    </div>
+                    {/* Frame 175 */}
+                    <div className='
+                            flex p-5 flex-col items-start gap-8 self-stretch
+                            rounded-bl-[20px] rounded-br-[20px]
+                            bg-white
+                          '>
+
+                      {/* Frame 3739 */}
+                      <div className='flex flex-col items-start gap-[6px] self-stretch'>
+
+                        {/* Product infor */}
+                        <div className='flex flex-col items-start gap-1 self-stretch'>
+                          <h2 className='
+                                  self-stretch
+                                  text-brown-900 font-DM Sans text-[12px] font-normal leading-normal uppercase
+                                '>
+                            FURNITURE
+                          </h2>
+                          <h1 className='
+                                w-[188.879px]
+                                text-black font-DM Sans text-[24px] font-normal leading-normal capitalize
+                              '>
+                            Sakarias
+                          </h1>
+                          <h2 className='
+                                h-[36px] self-stretch
+                                text-neutral-text-gray font-DM Sans text-[14px] font-normal leading-normal
+                              '>
+                            This is the sample product description on 2 lines.
+                          </h2>
+                        </div>
+
+                        {/* Rating */}
+                        <div className='flex items-center gap-[3px]'>
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                        </div>
+
+                        {/* Card Buttom */}
+                        <div className='flex justify-between items-center self-stretch'>
+
+                          {/* Pricing */}
+                          <div className='flex items-center gap-[2px]'>
+                            <h2 className='
+                                  w-[10.663px] h-[18.279px]
+                                  text-black font-Inter text-[14px] font-normal leading-normal
+                                '>
+                              $
+                            </h2>
+                            <h1 className='
+                                  w-[41.172px] h-[25.895px]
+                                  text-black font-DM Sans text-[21.325px] font-normal leading-normal
+                                '>
+                              392
+                            </h1>
+
+                          </div>
+
+                          {/* Button */}
+                          <a className='w-[50px] h-[50px]'>
+                            <img src='./assets/Circle Button.svg' alt='Plus' />
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
+
+
+
 
             {/* Image Link Note */}
             <a
