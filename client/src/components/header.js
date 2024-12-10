@@ -8,7 +8,12 @@ const Headers = ({ className, href, onClick, children, px }) => {
   const navigate = useNavigate();
 
   const handlePersonIconClick = () => {
-    navigate("/login");
+    const token = localStorage.getItem("token");
+    if (token) {
+      navigate("/profile");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -77,7 +82,7 @@ const Headers = ({ className, href, onClick, children, px }) => {
                     // >
                     //     <img src="./assets/search.svg" name={`${open ? 'close' : 'search'}`} alt="find" className="fill-brown-400 bg-brown-400" />
                     </a> */}
-          <a href="/" onClick={handlePersonIconClick}>
+          <a onClick={handlePersonIconClick}>
             <img
               src="./assets/person.svg"
               alt="person"

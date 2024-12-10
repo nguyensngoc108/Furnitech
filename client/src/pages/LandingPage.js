@@ -19,11 +19,11 @@ const LandingPage = () => {
           >
             {/* Background 1 */}
 
-            {/* Header 1 */}
+            {/* Header 1
 
             <div className="justify-between items-center  font-DM Sans ">
               <Header />
-            </div>
+            </div> */}
           </section>
 
           {/* Section */}
