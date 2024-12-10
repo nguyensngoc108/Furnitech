@@ -10,6 +10,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const isFormValid = email && password;
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -66,7 +67,12 @@ function Login() {
                 className="border-b-2 focus:ring-0"
               />
             </div>
-            <Button text="Login" onClick={handleLogin} className="w-full" />
+            <Button
+              text="Login"
+              onClick={handleLogin}
+              className="w-full"
+              disabled={!isFormValid}
+            />
             <p className="text-dm-base font-DM Sans mt-2 text-center font-semibold text-neutral-text-gray">
               Don't have an account?{" "}
               <button
