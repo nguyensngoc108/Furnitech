@@ -45,7 +45,7 @@ const App = () => {
             {/* Heading */}
 
             <section className='
-              
+              absolute top-[290px] left-[312px] right-[740px] bottom-[290px]
               w-[868px] p-[60px] 
               hero  flex flex-col justify-center items-start  font-DM Sans gap-10                            
               rounded-[40px] border border-[rgba(255,255,255,0.30)] bg-gradient-to-r from-[rgba(255,255,255,0.10)] via-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.60)] backdrop-blur-[16px]
@@ -120,9 +120,10 @@ const App = () => {
 
             <section className='
             inline-flex flex-col items-end gap-2
+            absolute left-[1348px] top-[771px] right-[351px] bottom-[191px]
           '>
               <h1 className='
-              self-stretch
+              self-stretch 
               text-black text-right text-[24px] font-semibold leading-[1.1]
               font-DM Sans
             '>
@@ -145,7 +146,7 @@ const App = () => {
 
                 <h1 className='
                 flex w-[134px] h-[28px] flex-col justify-center
-                 text-black text-right font-dm-sans text-3xl font-extrabold leading-tight 
+                 text-black text-right font-dm-sans text-3xl font-extrabold leading-[1.1] 
               '>
                   199.99$
                 </h1>

@@ -2,15 +2,17 @@ import React from 'react'
 
 const section = () => {
   return (
-    <div className='
-    rounded-[0px_40px_40px_0px] bg-white bg-opacity-24 
-    inline-flex justify-end items-start pt-[22px] pb-[22px] pl-[38.39px] pr-0 gap-[1071.61px]
-    '>
-      <h1 className='
-      text-gray-600 dark:text-gray-800 font-dm-sans text-base font-medium leading-[1.66] tracking-normal
-      '>
+    <div className="
+    w-[382px] h-[74px] pl-[38.39px] py-[22px] 
+    bg-white/25 rounded-tr-[40px] rounded-br-[40px] 
+    justify-end items-start gap-[1071.61px] 
+    ">
+      <h1 className="
+      text-neutral-text-gray text-lg font-medium font-DM Sans leading-[30px]
+      ">
         Get 20% OFF on your first order!
       </h1>
+
     </div>
   )
 }
