@@ -10,8 +10,8 @@ function Register() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,28 +19,31 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    // try {
-    //   const response = await api.post("/users/login", { email, password });
-    //   const { data, token } = response.data;
+    try {
+      const response = await api.post("http://localhost:8000/api/users/register", { email, phone, address, first_name, last_name, password });
+        const { data, token } = response.data;
 
-    //   // Store user ID and token in local storage
-    //   localStorage.setItem("userId", data._id);
-    //   localStorage.setItem("token", token);
+        // Store user ID and token in local storage
+        localStorage.setItem("userId", data._id);
+        localStorage.setItem("token", token);
 
-    //   // Redirect or update UI as needed
-    //   console.log("User logged in successfully!");
-    // } catch (error) {
-    //   console.error("Error logging in:", error);
-    // }
-  };
 
-  const handleLoginRedirect = () => {
-    navigate("/login");
-  };
+        // Redirect or update UI as needed
+        navigate("/login")
 
-  const isStep1Valid = firstName && lastName && email && phone && address;
-  const isStep2Valid =
-    password && confirmPassword && password === confirmPassword;
+        console.log("User registered successfully!");
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+
+    const handleLoginRedirect = () => {
+        navigate("/login");
+    }
+
+    const isStep1Valid = email && phone && address && first_name && last_name;
+    const isStep2Valid = password === confirmPassword && password.length >= 8;
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-brown-500">
@@ -64,7 +67,7 @@ function Register() {
                 <FormInput
                   label="First Name"
                   type="firstName"
-                  value={firstName}
+                  value={first_name}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="First Name"
                   required
@@ -73,7 +76,7 @@ function Register() {
                 <FormInput
                   label="Last Name"
                   type="lastName"
-                  value={lastName}
+                  value={last_name}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Last Name"
                   required

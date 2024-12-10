@@ -17,12 +17,14 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("/users/login", { email, password });
+      const response = await api.post("http://localhost:8000/api/users/login", { email, password });
       const { data, token } = response.data;
 
       // Store user ID and token in local storage
       localStorage.setItem("userId", data._id);
       localStorage.setItem("token", token);
+
+      navigate("/")
 
       // Redirect or update UI as needed
       toast.success("Login successful!");
