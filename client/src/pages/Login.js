@@ -5,6 +5,8 @@ import api from "../services/api";
 import Button from "../components/Button";
 import FormInput from "../components/FormInput";
 import PasswordInput from "../components/PasswordInput";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -23,8 +25,10 @@ function Login() {
       localStorage.setItem("token", token);
 
       // Redirect or update UI as needed
+      toast.success("Login successful!");
       console.log("User logged in successfully!");
     } catch (error) {
+      toast.error("Error logging in. Please check your credentials.");
       console.error("Error logging in:", error);
     }
   };
@@ -54,7 +58,7 @@ function Login() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                placeholder="Enter your email"
                 required
                 className="border-b-2 focus:ring-0"
               />
@@ -62,7 +66,7 @@ function Login() {
                 label="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+                placeholder="Enter password"
                 required
                 className="border-b-2 focus:ring-0"
               />
