@@ -68,6 +68,7 @@ const loginUser = async (req, res, next) => {
         }
 
         const token = signInToken(userData);
+        console.log(token);
 
         res.status(200).json({
             success: true,
