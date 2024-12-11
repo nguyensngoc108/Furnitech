@@ -3,25 +3,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
-  product_id: {
+  cart_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
+    ref: "Cart",
     required: true,
   },
-  user_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  quantity: {
-    type: Number,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  customer: {
+  shippingAddress: {
     type: String,
     required: true,
   },
@@ -36,18 +23,10 @@ const OrderSchema = new Schema({
   },
 });
 
-// virtual to user_id
-OrderSchema.virtual("user", {
-  ref: "User",
-  localField: "user_id",
-  foreignField: "_id",
-  justOne: true,
-});
-
-// virtual to product_id
-OrderSchema.virtual("product", {
-  ref: "Product",
-  localField: "product_id",
+// virtual to cart_id
+OrderSchema.virtual("cart", {
+  ref: "Cart",
+  localField: "cart_id",
   foreignField: "_id",
   justOne: true,
 });

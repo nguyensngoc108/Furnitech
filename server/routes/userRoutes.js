@@ -21,4 +21,6 @@ router.post("/login",loginUser)
 
 router.get("/profile",getUsers)
 
+router.get("/profile/:id",getUserById)
+
 module.exports = router;
