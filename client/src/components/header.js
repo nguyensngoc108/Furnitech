@@ -1,10 +1,14 @@
 // src/components/header.js
-
-import { useState } from "react"
-
+import { Link } from 'react-router-dom';
+import Productpage from './productpage';
+import React from 'react';
+// import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const headers = ({ className, href, onClick, children, px }) => {
-
+    // const [nav, setNav] = useState(false)
+    // const handleNav = () => {
+    //     setNav(!Nav)
+    // }
     return (
 
         <nav className="
@@ -33,10 +37,16 @@ const headers = ({ className, href, onClick, children, px }) => {
                 transition-all duration-300 ease-out 
                 text-brown-1000
             ">
-                <li><a href="#Home" class="hover:text-brown">Home</a></li>
-                <li><a href="#Products" class="hover:text-brown" >Products</a></li>
-                <li><a href="#Blogs" class="hover:text-brown">Blogs</a></li>
-                <li><a href="#About Us" class="hover:text-brown">About Us</a></li>
+                <li>
+                    <a href="/" class="hover:text-brown">Home</a>
+                </li>
+                <li>
+                    <Link to="/products" className="hover:text-brown">Products</Link>
+                </li>
+                <li>
+                    <a href="/" class="hover:text-brown">Blogs</a>
+                </li>
+                <li><a href="/" class="hover:text-brown">About Us</a></li>
             </ul>
 
             <ul>
@@ -46,17 +56,35 @@ const headers = ({ className, href, onClick, children, px }) => {
                     cursor-default md:cursor-pointer
                 ">
 
+                    {/* Search  */}
                     <a
-                        href="/"
-                        className="w-[50px] h-[50px] relative "
+                    // onClick={handleNav}
+                    // className="w-[50px] h-[50px] relative "
 
                     >
+                        {/* {!nav ? <input
+                            className='
+                                flex px-6 py-3.5 justify-between items-center self-stretch
+                                 rounded-[50px]
+                                    '
+                            type='text'
+                            placeholder='Search for Product...'
+                        /> : <input
+                            className=' !nav? 
+                                flex px-6 py-3.5 justify-between items-center self-stretch
+                                 rounded-[50px]
+                                    '
+                            type='text'
+                            placeholder='Search for Product...'
+                        />
+                        } */}
+
                         <img src="./assets/search.svg" alt="find"
                             className="
                             w-[50px] h-[50px] rounded-full
                             bg-[#f9f7f1]        
                             " />
-
+                        
                     </a>
                     <a
                         href="/"
@@ -71,15 +99,6 @@ const headers = ({ className, href, onClick, children, px }) => {
                 </li>
             </ul>
 
-            {/* Search nav */}
-            {/* <ul
-                classname={`
-                md:hidden bg-brown-400 absolute w-full h-full bottom-0 py-24 pl-4
-                duration-300 ${open ? 'left-0' : 'left-[100%]'}
-                `}
-            >
-
-            </ul> */}
 
         </nav>
 
