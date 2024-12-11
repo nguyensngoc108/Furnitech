@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import UserProfile from "./pages/UserProfile";
 import Register from "./pages/Register";
 import Header from "./components/header";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

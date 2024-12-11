@@ -16,6 +16,10 @@ const Headers = ({ className, href, onClick, children, px }) => {
     }
   };
 
+  const handleCartClick = () => {
+    navigate("/cart");
+  };
+
   return (
     <nav
       className="
@@ -89,7 +93,7 @@ const Headers = ({ className, href, onClick, children, px }) => {
               className="fill-brown-400"
             />
           </a>
-          <a href="/">
+          <a onClick={handleCartClick}>
             <img
               src="./assets/shopping.svg"
               alt="store"
