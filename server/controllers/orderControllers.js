@@ -1,112 +1,66 @@
-
-
 const Order = require("../models/Orders");
+const Cart = require("../models/Carts");
+const User = require("../models/Users");
 
-const getOrders = async (req, res) => {
-    try {
-        const orders = await Order.find({}).populate("user_id");
-        res.status(200).json({
-        success: true,
-        data: orders,
-        });
-    } catch (err) {
-        console.log(err);
-    }
+const checkout = async (req, res) => {
+  try {
+    const { cart_id, shippingAddress } = req.body;
+
+    // Retrieve the cart details using cart_id
+    const cart = await Cart.findById(cart_id).populate("items.product_id");
+
+    if (!cart) {
+      return res.status(400).json({
+        success: false,
+        msg: "Cart is empty!",
+      });
     }
 
-const getOrder = async (req, res) => {
-    try {
-        const { orderId } = req.params;
-        const order = await
-        Order.findById(orderId).populate("user_id");
-        if (!order) {
-            return res.status(400).json({
-                success: false,
-                msg: "Order not found!",
-            });
-        }
-        res.status(200).json({
-            success: true,
-            data: order,
-        });
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
+    // Retrieve user details using user_id from cart
+    const user = await User.findById(cart.user_id);
 
-const addOrder = async (req, res) => {
-    try {
-        let order = req.body;
-        let newOrder = new Order({
-            product_id: order.product_id,
-            user_id: order.user_id,
-            quantity: order.quantity,
-            price: order.price,
-            customer: order.customer,
-        });
-        await newOrder.save();
-        res.status(200).json({
-            success: true,
-            data: newOrder,
-            msg: "Order added successfully!",
-        });
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        msg: "User not found!",
+      });
     }
-    catch (err) {
-        console.log(err);
-    }
-}
 
+    // Create a new order with the cart details and user information
+    const newOrder = new Order({
+      cart_id: cart._id,
+      shippingAddress,
+      orderDate: new Date(),
+    });
 
-const updateOrder = async (req, res) => {
-    try {
-        let order = req.body;
-        let orderId = req.params.orderId;
-        let updatedOrder = {
-            product_id: order.product_id,
-            user_id: order.user_id,
-            quantity: order.quantity,
-            price: order.price,
-            customer: order.customer,
-        };
-        await Order.findByIdAndUpdate(orderId, updatedOrder);
-        res.status(200).json({
-            success: true,
-            data: updatedOrder,
-            msg: "Order updated successfully!",
-        });
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
+    await newOrder.save();
 
-const deleteOrder = async (req, res) => {
-    try {
-        const { orderId } = req.params;
-        const order = await
-        Order.findByIdAndDelete(orderId);
-        if (!order) {
-            return res.status(400).json({
-                success: false,
-                msg: "Order not found!",
-            });
-        }
-        res.status(200).json({
-            success: true,
-            msg: "Order deleted successfully!",
-        });
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
+    // Return the order details in the response
+    res.status(200).json({
+      success: true,
+      data: {
+        order: newOrder,
+        user: {
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.email,
+          phone: user.phone,
+        },
+        cart: cart.items,
+        totalPrice: cart.totalPrice,
+      },
+      msg: "Order placed successfully!",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      success: false,
+      msg: "An error occurred during checkout.",
+    });
+  }
+};
 
 module.exports = {
-    getOrders,
-    getOrder,
-    addOrder,
-    updateOrder,
-    deleteOrder,
+  checkout,
 };
 

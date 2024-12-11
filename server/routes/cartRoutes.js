@@ -5,12 +5,15 @@ const{
     getCartInfo,
     addToCart,
     removeFromCart,
+    removeAllFromCart,
 } = require('../controllers/cartControllers.js');
 
 router.post("/add", addToCart);
 
 router.post("/remove", removeFromCart);
 
-router.get("/:userId", getCartInfo);
+router.post("/removeAll", removeAllFromCart);
+
+router.get("/:user_id", getCartInfo);
 
 module.exports = router;
