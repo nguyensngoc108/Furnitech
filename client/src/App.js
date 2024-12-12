@@ -435,28 +435,34 @@ const App = () => {
                 {/* Product List */}
                 <div className='flex w-[931px] items-center gap-[28px]'>
 
-                  {/* Product Card */}
-                  <div className='flex w-[268px] flex-col items-center shrink-0 shadow-custom'>
+                  {/* Product Card 1 */}
+                  <div className='flex w-[284px] flex-col items-center shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]'>
 
-                    {/* Image  */}
-                    <div className='h-[240px] self-stretch border rounded-tl-[20px] rounded-tr-[20px] bg-white pl-[47px] pr-[47px] pt-[26.7px] pb-[9.26px]'>
-                      <img src='./assets/chair.png' alt='chair'
-                        className='w-[173.476px] h-[203.733px] shrink-0'
-                      />
+                    {/* Image */}
+                    <div className='h-[284px] relative rounded-lg bg-brown-300'>
+                      <div class="relative group w-64 h-64 origin-top-left">
 
-                      {/* Discount tag */}
-                      <div className='
-                        inline-flex p-2.5 justify-center items-center gap-2.5 rounded-lg
-                        bg-red
-                      '>
-                        <h1 className='
-                          text-brown-400 font-DM Sans text-[14px] font-normal leading-normal
-                        '>
-                          -38%
-                        </h1>
+                        <img
+                          src="./assets/Armchair.svg"
+                          alt="Default"
+                          class="absolute top-[40.1px] left-[55.3px] w-[173.48px] h-[203.73px] origin-top-left object-cover transition-opacity duration-300 group-hover:opacity-0"
+                        />
 
+                        <img
+                          src="./assets/hover1.svg"
+                          alt="Hover"
+                          class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        />
                       </div>
+
+                      {/* Discount Tag */}
+                      <div className="absolute top-[16px] left-[209px] h-[34px] px-2.5 py-2 bg-[#ff002e] rounded-lg justify-center items-center gap-2.5 inline-flex">
+                        <div className="text-[#f9f7f1] text-sm font-black font-['DM Sans']">-38%</div>
+                      </div>
+
+
                     </div>
+
                     {/* Frame 175 */}
                     <div className='
                             flex p-5 flex-col items-start gap-8 self-stretch
@@ -520,8 +526,310 @@ const App = () => {
 
                           {/* Button */}
                           <a className='w-[50px] h-[50px]'>
-                            <img src='./assets/Circle Button.svg' alt='Plus' />
+                            <img src='./assets/CircleButton.svg' alt='Plus' className='fill-black' />
                           </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* Product Card 2 */}
+                  <div className='flex w-[284px] flex-col items-center shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]'>
+
+                    {/* Image */}
+                    <div className='h-[284px] relative rounded-lg bg-brown-300'>
+                      <div class="relative group w-64 h-64 origin-top-left">
+
+                        <img
+                          src="./assets/Product2.svg"
+                          alt="Default"
+                          class="absolute top-[40.1px] left-[55.3px] w-[173.48px] h-[203.73px] origin-top-left object-cover transition-opacity duration-300 group-hover:opacity-0"
+                        />
+
+                        <img
+                          src="./assets/hover1.svg"
+                          alt="Hover"
+                          class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        />
+                      </div>
+
+                      {/* Discount Tag */}
+                      <div className="absolute top-[16px] left-[209px] h-[34px] px-2.5 py-2 bg-[#ff002e] rounded-lg justify-center items-center gap-2.5 inline-flex">
+                        <div className="text-[#f9f7f1] text-sm font-black font-['DM Sans']">-38%</div>
+                      </div>
+
+
+                    </div>
+
+                    {/* Frame 175 */}
+                    <div className='
+                            flex p-5 flex-col items-start gap-8 self-stretch
+                            rounded-bl-[20px] rounded-br-[20px]
+                            bg-white
+                          '>
+
+                      {/* Frame 3739 */}
+                      <div className='flex flex-col items-start gap-[6px] self-stretch'>
+
+                        {/* Product infor */}
+                        <div className='flex flex-col items-start gap-1 self-stretch'>
+                          <h2 className='
+                                  self-stretch
+                                  text-brown-900 font-DM Sans text-[12px] font-normal leading-normal uppercase
+                                '>
+                            STORAGE
+                          </h2>
+                          <h1 className='
+                                w-[188.879px]
+                                text-black font-DM Sans text-[24px] font-normal leading-normal capitalize
+                              '>
+                            IDANÄS
+                          </h1>
+                          <h2 className='
+                                h-[36px] self-stretch
+                                text-neutral-text-gray font-DM Sans text-[14px] font-normal leading-normal
+                              '>
+                            Bookcase, dark brown stained
+                          </h2>
+                        </div>
+
+                        {/* Rating */}
+                        <div className='flex items-center gap-[3px]'>
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                        </div>
+
+                        {/* Card Buttom */}
+                        <div className='flex justify-between items-center self-stretch'>
+
+                          {/* Pricing */}
+                          <div className='flex items-center gap-[2px]'>
+                            <h2 className='
+                                  w-[10.663px] h-[18.279px]
+                                  text-black font-Inter text-[14px] font-normal leading-normal
+                                '>
+                              $
+                            </h2>
+                            <h1 className='
+                                  w-[41.172px] h-[25.895px]
+                                  text-black font-DM Sans text-[21.325px] font-normal leading-normal
+                                '>
+                              392
+                            </h1>
+
+                          </div>
+
+                          {/* Button */}
+                          <a className='w-[50px] h-[50px]'>
+                            <img src='./assets/CircleButton.svg' alt='Plus' className='fill-black' />
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {/* Product Card 3 */}
+                  <div className='flex w-[284px] flex-col items-center shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]'>
+
+                    {/* Image */}
+                    <div className='h-[284px] relative rounded-lg bg-brown-300'>
+                      <div class="relative group w-64 h-64 origin-top-left">
+
+                        <img
+                          src="./assets/Table.svg"
+                          alt="Default"
+                          class="absolute top-[40.1px] left-[55.3px] w-[173.48px] h-[203.73px] origin-top-left object-cover transition-opacity duration-300 group-hover:opacity-0"
+                        />
+
+                        <img
+                          src="./assets/hover1.svg"
+                          alt="Hover"
+                          class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        />
+                      </div>
+
+                      {/* Discount Tag */}
+                      <div className="absolute top-[16px] left-[209px] h-[34px] px-2.5 py-2 bg-[#ff002e] rounded-lg justify-center items-center gap-2.5 inline-flex">
+                        <div className="text-[#f9f7f1] text-sm font-black font-['DM Sans']">-38%</div>
+                      </div>
+
+
+                    </div>
+
+                    {/* Frame 175 */}
+                    <div className='
+                            flex p-5 flex-col items-start gap-8 self-stretch
+                            rounded-bl-[20px] rounded-br-[20px]
+                            bg-white
+                          '>
+
+                      {/* Frame 3739 */}
+                      <div className='flex flex-col items-start gap-[6px] self-stretch'>
+
+                        {/* Product infor */}
+                        <div className='flex flex-col items-start gap-1 self-stretch'>
+                          <h2 className='
+                                  self-stretch
+                                  text-brown-900 font-DM Sans text-[12px] font-normal leading-normal uppercase
+                                '>
+                            FURNITURE
+                          </h2>
+                          <h1 className='
+                                w-[188.879px]
+                                text-black font-DM Sans text-[24px] font-normal leading-normal capitalize
+                              '>
+                            LISTERBY
+                          </h1>
+                          <h2 className='
+                                h-[36px] self-stretch
+                                text-neutral-text-gray font-DM Sans text-[14px] font-normal leading-normal
+                              '>
+                            Coffee table, oak veneer
+                          </h2>
+                        </div>
+
+                        {/* Rating */}
+                        <div className='flex items-center gap-[3px]'>
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                        </div>
+
+                        {/* Card Buttom */}
+                        <div className='flex justify-between items-center self-stretch'>
+
+                          {/* Pricing */}
+                          <div className='flex items-center gap-[2px]'>
+                            <h2 className='
+                                  w-[10.663px] h-[18.279px]
+                                  text-black font-Inter text-[14px] font-normal leading-normal
+                                '>
+                              $
+                            </h2>
+                            <h1 className='
+                                  w-[41.172px] h-[25.895px]
+                                  text-black font-DM Sans text-[21.325px] font-normal leading-normal
+                                '>
+                              392
+                            </h1>
+
+                          </div>
+
+                          {/* Button */}
+                          <a className='w-[50px] h-[50px]'>
+                            <img src='./assets/CircleButton.svg' alt='Plus' className='fill-black' />
+                          </a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Product Card 4 */}
+                  <div className='flex w-[284px] flex-col items-center shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]'>
+
+                    {/* Image */}
+                    <div className='h-[284px] relative rounded-lg bg-brown-300'>
+                      <div class="relative group w-64 h-64 origin-top-left">
+
+                        <img
+                          src="./assets/Table.svg"
+                          alt="Default"
+                          class="absolute top-[40.1px] left-[55.3px] w-[173.48px] h-[203.73px] origin-top-left object-cover transition-opacity duration-300 group-hover:opacity-0"
+                        />
+
+                        <img
+                          src="./assets/hover1.svg"
+                          alt="Hover"
+                          class="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        />
+                      </div>
+
+                      {/* Discount Tag */}
+                      <div className="absolute top-[16px] left-[209px] h-[34px] px-2.5 py-2 bg-[#ff002e] rounded-lg justify-center items-center gap-2.5 inline-flex">
+                        <div className="text-[#f9f7f1] text-sm font-black font-['DM Sans']">-38%</div>
+                      </div>
+
+
+                    </div>
+
+                    {/* Frame 175 */}
+                    <div className='
+                            flex p-5 flex-col items-start gap-8 self-stretch
+                            rounded-bl-[20px] rounded-br-[20px]
+                            bg-white
+                          '>
+
+                      {/* Frame 3739 */}
+                      <div className='flex flex-col items-start gap-[6px] self-stretch'>
+
+                        {/* Product infor */}
+                        <div className='flex flex-col items-start gap-1 self-stretch'>
+                          <h2 className='
+                                  self-stretch
+                                  text-brown-900 font-DM Sans text-[12px] font-normal leading-normal uppercase
+                                '>
+                            FURNITURE
+                          </h2>
+                          <h1 className='
+                                w-[188.879px]
+                                text-black font-DM Sans text-[24px] font-normal leading-normal capitalize
+                              '>
+                            LISTERBY
+                          </h1>
+                          <h2 className='
+                                h-[36px] self-stretch
+                                text-neutral-text-gray font-DM Sans text-[14px] font-normal leading-normal
+                              '>
+                            Coffee table, oak veneer
+                          </h2>
+                        </div>
+
+                        {/* Rating */}
+                        <div className='flex items-center gap-[3px]'>
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                          <img src='./assets/star.svg' alt='star' />
+                        </div>
+
+                        {/* Card Buttom */}
+                        <div className='flex justify-between items-center self-stretch'>
+
+                          {/* Pricing */}
+                          <div className='flex items-center gap-[2px]'>
+                            <h2 className='
+                                  w-[10.663px] h-[18.279px]
+                                  text-black font-Inter text-[14px] font-normal leading-normal
+                                '>
+                              $
+                            </h2>
+                            <h1 className='
+                                  w-[41.172px] h-[25.895px]
+                                  text-black font-DM Sans text-[21.325px] font-normal leading-normal
+                                '>
+                              392
+                            </h1>
+
+                          </div>
+
+                          {/* Button */}
+                          <a className='w-[50px] h-[50px]'>
+                            <img src='./assets/CircleButton.svg' alt='Plus' className='fill-black' />
+                          </a>
+
+
+
 
                         </div>
                       </div>
