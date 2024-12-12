@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './header'
-import Footer from './footer'
+import Header from '../components/header'
+import Footer from '../components/footer'
 function productpage() {
     return (
         <section className='max-w-[1920px] h-[3140px] bg-brown-400'>

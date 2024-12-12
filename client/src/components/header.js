@@ -86,14 +86,14 @@ const Headers = ({ className, href, onClick, children, px }) => {
             <img
               src="./assets/person.svg"
               alt="person"
-              className="fill-brown-400"
+
             />
           </a>
           <a href="/">
             <img
               src="./assets/shopping.svg"
               alt="store"
-              className="fill-brown-400"
+
             />
           </a>
         </li>
