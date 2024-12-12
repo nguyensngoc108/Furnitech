@@ -16,13 +16,13 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^10.0.0",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
-    "mongoose": "^6.13.3",
+    "mongodb": "^6.11.0",
+    "mongoose": "^6.13.4",
     "mongoosejs-soft-delete": "^1.0.2",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.7",
     "path": "^0.12.7",
     "server": "file:",
     "ucfirst": "^1.0.0",
@@ -31,7 +31,8 @@
     "validator": "^13.12.0"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "nodemon": "^3.1.7"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

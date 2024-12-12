@@ -4,8 +4,8 @@ const Cart = require("../models/Carts");
 
 const getCartInfo = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const cart = await Cart.findOne({ userId }).populate("items.productId");
+    const { user_id } = req.params;
+    const cart = await Cart.findOne({ userId }).populate("items.product_id");
 
     if (!cart) {
       return res.status(400).json({
@@ -25,21 +25,21 @@ const getCartInfo = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
-    let { userId, productId, quantity } = req.body;
+    let { user_id, product_id, quantity, price } = req.body;
 
-    const cart = await Cart.findOne({ userId });
+    const cart = await Cart.findOne({ user_id });
 
     if (!cart) {
       let newCart = new Cart({
-        userId,
+        user_id,
         items: [
           {
-            productId,
+            product_id,
             quantity,
-            price: productId.price,
+            price,
           },
         ],
-        totalPrice: productId.price * quantity,
+        totalPrice: price * quantity,
       });
 
       await newCart.save();
@@ -52,21 +52,21 @@ const addToCart = async (req, res) => {
     }
 
     let productIndex = cart.items.findIndex(
-      (item) => item.productId.toString() === productId
+      (item) => item.product_id.toString() === product_id
     );
 
     if (productIndex > -1) {
       cart.items[productIndex].quantity += quantity;
-      cart.items[productIndex].price += productId.price * quantity;
+      cart.items[productIndex].price += product_id.price * quantity;
     } else {
       cart.items.push({
-        productId,
+        product_id,
         quantity,
-        price: productId.price * quantity,
+        price: product_id.price * quantity,
       });
     }
 
-    cart.totalPrice += productId.price * quantity;
+    cart.totalPrice += product_id.price * quantity;
 
     await cart.save();
 
@@ -83,10 +83,10 @@ const addToCart = async (req, res) => {
 
 const removeFromCart = async (req, res) => {
   try {
-    let { userId, productId } = req.body;
+    let { user_id, product_id } = req.body;
 
     const cart = await Cart.findOne
-    ({ userId });
+    ({ user_id });
 
     if (!cart) {
         return res.status(400).json({
@@ -96,7 +96,7 @@ const removeFromCart = async (req, res) => {
         }
 
     let productIndex = cart.items.findIndex(
-        (item) => item.productId.toString() === productId
+        (item) => item.product_id.toString() === product_id
     );
 
     if (productIndex > -1) {
