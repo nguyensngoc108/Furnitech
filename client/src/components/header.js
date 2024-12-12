@@ -41,7 +41,7 @@ const headers = ({ className, href, onClick, children, px }) => {
                     <a href="/" class="hover:text-brown">Home</a>
                 </li>
                 <li>
-                    <Link to="/products" className="hover:text-brown">Products</Link>
+                    <a href="/" class="hover:text-brown">Product</a>
                 </li>
                 <li>
                     <a href="/" class="hover:text-brown">Blogs</a>
@@ -84,7 +84,7 @@ const headers = ({ className, href, onClick, children, px }) => {
                             w-[50px] h-[50px] rounded-full
                             bg-[#f9f7f1]        
                             " />
-                        
+
                     </a>
                     <a
                         href="/"
