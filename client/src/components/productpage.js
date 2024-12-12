@@ -49,7 +49,7 @@ function productpage() {
 
                         {/* Category 1*/}
                         <div className='w-[160px] h-[200px] flex flex-col items-start gap-5'>
-                            <img src='./assets/Furniture.jpg' className='
+                            <img src='./assets/Furniture.svg' className='
                                 w-[160px] h-[160px]
                                 rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]s
                             ' />
@@ -62,7 +62,7 @@ function productpage() {
                         </div>
                         {/* Category 2*/}
                         <div className='flex flex-col items-start gap-5'>
-                            <img src='./assets/Decoration.jpg' className='
+                            <img src='./assets/Decoration.svg' className='
                                 w-[160px] h-[160px]
                                 rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
                             ' />
@@ -75,7 +75,7 @@ function productpage() {
                         </div>
                         {/* Category 3*/}
                         <div className='flex flex-col items-start gap-5'>
-                            <img src='./assets/Storage.jpg' className='
+                            <img src='./assets/Storage.svg' className='
                                 w-[160px] h-[160px]
                                 rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
                             ' />
@@ -88,7 +88,7 @@ function productpage() {
                         </div>
                         {/* Category 4 */}
                         <div className='flex flex-col items-start justify-center  gap-5'>
-                            <img src='./assets/Lighting.jpg' className='
+                            <img src='./assets/Lighting.svg' className='
                                 w-[160px] h-[160px]
                                 rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
                             ' />
