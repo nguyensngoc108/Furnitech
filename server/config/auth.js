@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 
 
 const signInToken = (user) => {
-    console.log(user)
   return jwt.sign(
     {
       _id: user._id,

@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
+let softDelete = require('mongoosejs-soft-delete');
 
 const Schema = mongoose.Schema;
 
 const CartSchema = new Schema({
-    userId: {
+    user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
     items: [
         {
-            productId: {
+            product_id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Product',
                 required: true
@@ -28,13 +29,30 @@ const CartSchema = new Schema({
     ],
     totalPrice: {
         type: Number,
-        required: true,
         default: 0
     },
     createdAt: {
         type: Date,
         default: Date.now
     }
+});
+
+CartSchema.plugin(softDelete);
+
+//virtual to user_id
+CartSchema.virtual('user', {
+    ref: 'User',
+    localField: 'user_id',
+    foreignField: '_id',
+    justOne: true
+});
+
+//virtual to product_id
+CartSchema.virtual('product', {
+    ref: 'Product',
+    localField: 'product_id',
+    foreignField: '_id',
+    justOne: true
 });
 
 module.exports = mongoose.model('Cart', CartSchema);

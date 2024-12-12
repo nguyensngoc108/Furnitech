@@ -1,10 +1,13 @@
 // src/components/Login.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import './Login.css';
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -16,15 +19,16 @@ function Login() {
       localStorage.setItem('userId', data._id);
       localStorage.setItem('token', token);
 
-      // Redirect or update UI as needed
-      console.log('User logged in successfully!');
+      // Set user state and redirect to homepage
+      onLogin({ _id: data._id, name: data.name });
+      navigate('/');
     } catch (error) {
       console.error('Error logging in:', error);
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <form className="login-form" onSubmit={handleLogin}>
       <input
         type="email"
         value={email}

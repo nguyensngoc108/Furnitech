@@ -19,4 +19,6 @@ router.post("/register",register)
 
 router.post("/login",loginUser)
 
+router.get("/profile",getUsers)
+
 module.exports = router;
