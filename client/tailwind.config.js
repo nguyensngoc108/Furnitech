@@ -42,7 +42,7 @@ module.exports = {
 
       fontSize: {
         "dm-base": ["18px", "1.5"],
-        "display-3": ["44px", "1.1"],
+        "display-3": ["44px", "1.25"],
         "display-4": ["28px", "1.5"],
       },
 

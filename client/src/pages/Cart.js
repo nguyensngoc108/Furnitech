@@ -104,8 +104,8 @@ function Cart() {
     );
   };
 
-  const handleCheckout = () => {
-    navigate("/checkout");
+  const handleShippingDetails = () => {
+    navigate("/shipping");
   };
 
   if (loading) {
@@ -164,7 +164,7 @@ function Cart() {
         </div>
         <Button
           text="Proceed to Checkout"
-          onClick={handleCheckout}
+          onClick={handleShippingDetails}
           variant="secondary"
           className="mt-auto"
         />
