@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import Footer from './footer'
 function productpage() {
     return (
         <section className='max-w-[1920px] h-[3140px] bg-brown-400'>
@@ -1003,6 +1004,11 @@ function productpage() {
 
 
                 </section>
+            </div>
+
+            {/* Footer */}
+            <div>
+                <Footer />
             </div>
         </section>
     )
