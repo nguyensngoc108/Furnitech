@@ -1,10 +1,10 @@
 // src/App.js
 import React from "react";
-import Header from "../components/header.js";
-import Section from "../components/section.js";
-import Footer from "../components/footer.js";
+import Header from "../components/Header.js";
+import Section from "../components/Section.js";
+import Footer from "../components/Footer.js";
 
-const LandingPage = () => {
+function LandingPage() {
   return (
     <>
       <section className="w-[1920px] h-[6178px] bg-brown-400">
@@ -272,9 +272,9 @@ const LandingPage = () => {
         {/* Slide 2 */}
         <section className="flex  flex-col justify-center items-center ">
           {/* Header 2 */}
-          <div>
+          {/* <div>
             <Header />
-          </div>
+          </div> */}
 
           {/* Categories By Spaces */}
           <section

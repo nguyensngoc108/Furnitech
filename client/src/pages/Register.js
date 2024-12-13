@@ -20,7 +20,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("http://localhost:8000/api/users/register", { email, phone, address, first_name, last_name, password });
+      const response = await api.post("users/register", { email, phone, address, first_name, last_name, password });
         const { data, token } = response.data;
 
         // Store user ID and token in local storage
