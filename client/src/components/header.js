@@ -18,7 +18,7 @@ const Header = ({ user, onLogout }) => {
       <a href="/" className="flex items-center">
         <img src="./assets/Cir.svg" alt="Logo" className="w-9 h-9" />
         <span className="ml-3 text-black font-DM Sans text-2xl font-extrabold tracking-wider leading-normal">
-          YourAppName
+          Furnitech
         </span>
       </a>
       <div className="flex items-center space-x-4">
