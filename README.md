@@ -62,14 +62,13 @@ With rapid advances in digital technology, the need for robust and effective onl
 |   3   |    Nguyễn Vạn Huy     | ITITIU20215 | ITITIU20215@student.hcmiu.edu.vn |       [ITITIU20215](https://github.com/ITITIU20215)       |      |
 |   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)      |
 
-# Project Name
 
 ## Overview
 The website provides secure customer authentication, a shopping cart for managing selected items, an order system for tracking purchases, and robust product and category management for seamless navigation. React.js ensures a responsive and user-friendly interface, Node.js facilitates efficient server-side operations, and MongoDB offers a scalable database solution for storing customer, product, and order data. The project highlights the integration of these technologies and the challenges addressed, showcasing the effectiveness of modern web development tools in delivering streamlined e-commerce solutions.
 
 ### Installation :dart:
 
-### BE:
+### Back-end:
 
 1. **Download Node.js**:
     - Go to the [official Node.js download page](https://nodejs.org/en/download/package-manager).
@@ -89,7 +88,7 @@ npm --version
 npm start
 ```
    
-### FE:
+### Front-end:
 1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
