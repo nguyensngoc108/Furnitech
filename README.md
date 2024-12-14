@@ -68,7 +68,7 @@ The website provides secure customer authentication, a shopping cart for managin
 
 ### Installation :dart:
 
-#### Back-end:
+#### :hammer_and_wrench: Back-end:
 
 1. **Download Node.js**:
     - Go to the [official Node.js download page](https://nodejs.org/en/download/package-manager).
@@ -88,7 +88,7 @@ npm --version
 npm start
 ```
    
-#### Front-end:
+#### :art: Front-end:
 1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
