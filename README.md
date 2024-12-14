@@ -63,7 +63,7 @@ With rapid advances in digital technology, the need for robust and effective onl
 |   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)      |
 
 
-## Overview
+### Overview
 The website provides secure customer authentication, a shopping cart for managing selected items, an order system for tracking purchases, and robust product and category management for seamless navigation. React.js ensures a responsive and user-friendly interface, Node.js facilitates efficient server-side operations, and MongoDB offers a scalable database solution for storing customer, product, and order data. The project highlights the integration of these technologies and the challenges addressed, showcasing the effectiveness of modern web development tools in delivering streamlined e-commerce solutions.
 
 ### Installation :dart:
