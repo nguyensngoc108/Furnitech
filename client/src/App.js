@@ -1,24 +1,66 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import Login from "./pages/Login";
-import UserProfile from "./pages/UserProfile";
-import Register from "./pages/Register";
-import Header from "./components/header";
+// src/App.js
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ToastContainer } from './utils/toast';
+import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
+import PrivateRoute from './components/PrivateRoute';
+import Header from './components/Header';
+
+const Layout = lazy(() => import('./layout/Layout.js'));
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const Login = lazy(() => import('./pages/Login'));
+const UserProfile = lazy(() => import('./pages/UserProfile'));
+const Register = lazy(() => import('./pages/Register'));
+const ForgetPassword = lazy(() => import('./pages/ForgotPassword.js'));
+const ResetPassword = lazy(() => import('./pages/ResetPassword.js'));
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const userId = localStorage.getItem('userId');
+    const userName = localStorage.getItem('userName');
+    if (userId && userName) {
+      setUser({ _id: userId, name: userName });
+    }
+  }, []);
+
+  const handleLogin = (user) => {
+    console.log('User logged in:', user);
+    localStorage.setItem('userId', user._id);
+    localStorage.setItem('token', user.token);
+    localStorage.setItem('userName', user.name);
+    setUser(user);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('userId');
+    localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    setUser(null);
+    console.log('User logged out');
+  };
+
   return (
-    <>
-      <div className="justify-between items-center  font-DM Sans ">
-        <Header />
-      </div>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </>
+    <Router>
+      <ToastContainer />
+      <AccessibleNavigationAnnouncer />
+      <Header user={user} onLogout={handleLogout} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/signup" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgetPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/landing" element={<LandingPage />} />
+
+          <Route path="/profile" element={<PrivateRoute component={UserProfile} />} />
+          <Route path="/" element={<Navigate to="/landing" />} />
+
+          <Route path="*" element={<Navigate to="/landing" />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
 };
 
