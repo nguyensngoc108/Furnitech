@@ -155,6 +155,19 @@ npm run start
 <img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Sign%20up.png" alt="Register"/>
 <img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Sign%20up%20-%20Password.png" alt="Register_Password"/>
 
+### Home Interface:
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Landing%20Page1.png" alt="Home1"/>
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Landing%20Page2.png" alt="Home2"/>
+
+### Product Interface:
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Product%20Page.png" alt="Product"/>
+
+### Cart Interface:
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Cart.png" alt="Cart"/>
+
+### Checkout Interface:
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Checkout%20Sucessful.png" alt="Checkout"/>
+
 <br />
 
 
