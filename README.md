@@ -50,7 +50,7 @@ Course: Web Application Development
 </div>
 
 <div style="text-align:justify">
-With rapid advances in digital technology, the need for robust and effective online learning platforms has increased. The ability of these platforms to deliver personalized, interactive, and accessible educational content is essential for effective learning and skill development. As education increasingly moves online, the need for sophisticated e-learning systems that can adapt to diverse learning styles and provide rich multimedia experiences has become important. This project focuses on developing an online learning website system that leverages advanced technology to enhance the learning experience, ensuring it is engaging, flexible and accessible to learners.
+In today’s digital age, the furniture industry has witnessed a significant transformation, transitioning from traditional brick-and-mortar stores to dynamic online platforms. E-commerce has become an essential channel for businesses to meet the growing demand for convenience, variety, and personalized shopping experiences. This report delves into the development and operational aspects of a furniture e-commerce website, which serves as a comprehensive platform for customers to browse, select, and purchase furniture products from the comfort of their homes.
 </div>
 
 ### Team Members :couplekiss_man_man:
