@@ -36,10 +36,9 @@ Course: Web Application Development
 2. [Tech stack](#Tech_stack)
 3. [Entity Relationship Diagram](#ERD)
 4. [Interface](#Interface)
-5. [Features](#Features)
-6. [Challenges](#Challenges)
-7. [Acknowledgments](#Acknowledgments)
-8. [References](#References)
+5. [Challenges](#Challenges)
+6. [Acknowledgments](#Acknowledgments)
+7. [References](#References)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -144,7 +143,8 @@ npm run start
 
 [//]: # (![ERD]&#40;https://github.com/dtnghia2010/E-learning-platform/blob/main/ERD.png&#41;)
 
-# 4. Interface <a name="Interface"></a>:
+
+## 4. Interface <a name="Interface"></a>:
 
 ### Login Interface:
 
@@ -160,7 +160,7 @@ npm run start
   <br />
 
 
-## 7. Acknowledgments<a name="Acknowledgments">:brain:
+## 6. Acknowledgments<a name="Acknowledgments">:brain:
 <div style="text-align:justify">
 We express our sincere gratitude and appreciation to Assoc. Prof. Nguyen Van Sinh for his professional guidance. His unwavering encouragement and support were instrumental in helping our team achieve its goals.
 We also extend our thanks to MSc. Nguyen Trung Nghia, a laboratory lecturer, whose technical assistance and good humor greatly enriched our learning experience this semester.
@@ -170,7 +170,7 @@ We would also like to express our sincere gratitude to the irreplaceable members
 <br />
 
 
-## 8. References<a name="References">:bookmark:
+## 7. References<a name="References">:bookmark:
 - [Node.js tutorial](https://www.w3schools.com/nodejs/)
 - [React.js tutorial](https://www.w3schools.com/react/default.asp)
 - [MongoDB tutorial](https://www.w3schools.com/nodejs/nodejs_mongodb.asp)
