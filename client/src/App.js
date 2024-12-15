@@ -8,6 +8,7 @@ import Header from "./components/header";
 import ShippingDetails from "./pages/ShippingDetails";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Productpage from "./pages/Productpage";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shipping" element={<ShippingDetails />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/product" element={<Productpage />} />
       </Routes>
     </>
   );
