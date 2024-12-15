@@ -9,6 +9,8 @@ import ShippingDetails from "./pages/ShippingDetails";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Productpage from "./pages/Productpage";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
         <Route path="/shipping" element={<ShippingDetails />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/product" element={<Productpage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </>
   );
