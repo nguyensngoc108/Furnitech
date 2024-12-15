@@ -20,6 +20,13 @@ const Headers = ({ className, href, onClick, children, px }) => {
     navigate("/cart");
   };
 
+  const handleAboutClick = () => {
+    navigate("/about");
+  };
+  const handleBlogClick = () => {
+    navigate("/blog");
+  };
+
   return (
     <nav
       className="
@@ -62,12 +69,12 @@ const Headers = ({ className, href, onClick, children, px }) => {
           </a>
         </li>
         <li>
-          <a href="#Blogs" class="hover:text-brown">
+          <a onClick={handleBlogClick} class="hover:text-brown">
             Blogs
           </a>
         </li>
         <li>
-          <a href="#About Us" class="hover:text-brown">
+          <a onClick={handleAboutClick} class="hover:text-brown">
             About Us
           </a>
         </li>
@@ -87,18 +94,10 @@ const Headers = ({ className, href, onClick, children, px }) => {
                     //     <img src="./assets/search.svg" name={`${open ? 'close' : 'search'}`} alt="find" className="fill-brown-400 bg-brown-400" />
                     </a> */}
           <a onClick={handlePersonIconClick}>
-            <img
-              src="./assets/person.svg"
-              alt="person"
-
-            />
+            <img src="./assets/person.svg" alt="person" />
           </a>
           <a onClick={handleCartClick}>
-            <img
-              src="./assets/shopping.svg"
-              alt="store"
-
-            />
+            <img src="./assets/shopping.svg" alt="store" />
           </a>
         </li>
       </ul>
