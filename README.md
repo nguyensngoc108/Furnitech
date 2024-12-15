@@ -141,14 +141,19 @@ npm run start
 
 ## 3. Entity Relationship Diagram <a name="ERD"></a>:
 
-[//]: # (![ERD]&#40;https://github.com/dtnghia2010/E-learning-platform/blob/main/ERD.png&#41;)
+![ERD](https://github.com/nguyensngoc108/Furnitech/blob/main/Furnitech_ERD.png)
 
 
 ## 4. Interface <a name="Interface"></a>:
 
 ### Login Interface:
 
-[//]: # (<img src="https://github.com/dtnghia2010/E-learning-platform/blob/main/create_document.png" alt="Login"/>)
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Login.png" alt="Login"/>
+
+### Register Interface:
+
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Sign%20up.png" alt="Register"/>
+<img src="https://github.com/nguyensngoc108/Furnitech/blob/main/Sign%20up%20-%20Password.png" alt="Register_Password"/>
 
 <br />
 
