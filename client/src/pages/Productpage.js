@@ -1006,10 +1006,10 @@ function productpage() {
                 </section>
             </div>
 
-            {/* Footer */}
+            {/* Footer
             <div>
                 <Footer />
-            </div>
+            </div> */}
         </section>
     )
 }

@@ -4,7 +4,6 @@ import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import UserProfile from "./pages/UserProfile";
 import Register from "./pages/Register";
-import Header from "./components/header";
 import ShippingDetails from "./pages/ShippingDetails";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -23,7 +22,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/shipping" element={<ShippingDetails />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/product" element={<Productpage />} />
+        <Route path="/Productpage" element={<Productpage />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
       </Routes>

@@ -16,6 +16,9 @@ const Headers = ({ className, href, onClick, children, px }) => {
     }
   };
 
+  const handleProductpageClick = () => {
+    navigate("/Productpage");
+  };
   const handleCartClick = () => {
     navigate("/cart");
   };
@@ -71,7 +74,7 @@ const Headers = ({ className, href, onClick, children, px }) => {
           </a>
         </li>
         <li>
-          <a href="#Products" class="hover:text-brown">
+          <a onClick={handleProductpageClick} class="hover:text-brown">
             Products
           </a>
         </li>
