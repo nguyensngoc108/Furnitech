@@ -30,10 +30,14 @@ const Headers = ({ className, href, onClick, children, px }) => {
   return (
     <nav
       className="
-         flex justify-between items-center   py-[32px] l-container 
+         flex justify-between items-center max-w-[1920px]   py-[32px] l-container 
          md:bg-top bg-center
          "
     >
+
+
+
+      {/* Logo */}
       <a
         href="/"
         className="  
@@ -50,6 +54,9 @@ const Headers = ({ className, href, onClick, children, px }) => {
           Furnitech
         </span>
       </a>
+
+
+      {/* Menu list */}
       <ul
         className=" 
                 flex items-start  px gap-10  pl-[188px] pr-[188px] 
@@ -59,7 +66,7 @@ const Headers = ({ className, href, onClick, children, px }) => {
             "
       >
         <li>
-          <a href="#Home" class="hover:text-brown">
+          <a href="/" class="hover:text-brown">
             Home
           </a>
         </li>
@@ -80,11 +87,14 @@ const Headers = ({ className, href, onClick, children, px }) => {
         </li>
       </ul>
 
+
+      {/* Buttom list */}
       <ul>
         <li
           className=" 
-                    flex justify-end items-center gap-6 w-{50px} h-{50px} pr-0 fill-brown-400 bg-brown-400
+                    flex justify-end items-center gap-6 w-{50px} h-{50px} pr-0 
                     cursor-default md:cursor-pointer
+                    fill-brown-400
                 "
         >
           {/* <a

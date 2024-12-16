@@ -15,9 +15,6 @@ import Blog from "./pages/Blog";
 const App = () => {
   return (
     <>
-      <div className="justify-between items-center  font-DM Sans ">
-        <Header />
-      </div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
