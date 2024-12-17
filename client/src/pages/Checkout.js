@@ -17,12 +17,12 @@ function Checkout() {
     const fetchOrderDetails = async () => {
       try {
         const response = await api.get(`/orders/${orderId}`);
-        const { order, user, cart, totalPrice } = response.data;
+        const { data } = response.data;
 
-        setOrderDetails(order);
-        setCustomerDetails(user);
-        setCartItems(cart);
-        setTotalPrice(totalPrice);
+        setOrderDetails(data);
+        setCustomerDetails(data.customer);
+        setCartItems(data.cart_id.items);
+        setTotalPrice(data.price);
       } catch (error) {
         console.error("Error fetching order details:", error);
       }
@@ -76,12 +76,12 @@ function Checkout() {
             <li className="flex justify-between">
               <span>Shipping Address</span>
               <span className="font-medium">
-                {orderDetails.shippingAddress}
+                {customerDetails.address}
               </span>
             </li>
             <li className="flex justify-between">
               <span>Delivery Fee</span>
-              <span className="font-medium">$5.00</span>
+              <span className="font-medium">${orderDetails.price_info.shipping}</span>
             </li>
           </ul>
           <hr className="border-brown-700 my-4" />
@@ -95,7 +95,7 @@ function Checkout() {
           <h3 className="text-display-4 font-bold">Products</h3>
           <ul className="space-y-2 space-y-2 text-dm-base text-heading-black">
             {cartItems.map((item) => (
-              <li key={item.product_id._id} className="flex justify-between">
+              <li key={item.product_id} className="flex justify-between">
                 <span>
                   {item.product_id.name} (x{item.quantity})
                 </span>

@@ -17,7 +17,16 @@ const getOrders = async (req, res) => {
 const getOrder = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const order = await Order.findById(orderId).populate("user_id cart_id");
+    console.log("order", orderId);
+    const order = await Order.findById(orderId)
+      .populate("user_id")
+      .populate({
+        path: "cart_id",
+        populate: {
+          path: "items.product_id",
+          model: "Product",
+        },
+      });
     if (!order) {
       return res.status(400).json({
         success: false,
@@ -30,6 +39,10 @@ const getOrder = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.status(500).json({
+      success: false,
+      msg: "Server error",
+    });
   }
 };
 
