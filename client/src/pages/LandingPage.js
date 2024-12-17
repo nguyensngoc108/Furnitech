@@ -1,45 +1,16 @@
-// src/App.js
 import React from "react";
-import Header from "../components/Header.js";
 import Section from "../components/Section.js";
 import Footer from "../components/Footer.js";
 
 function LandingPage() {
   return (
     <>
-      <section className="w-[1920px] h-[6178px] bg-brown-400">
+      <section className="w-full h-auto bg-brown-400 bg-center">
         <section
-          className="w-[1920px] h-[1024px] shrink-0"
-          // Background 1
+          className="w-full max-w-screen bg-cover bg-center h-screen"
           style={{ backgroundImage: `url('./assets/Container.jpg')` }}
         >
-          <section
-            className="
-          
-         flex  flex-col justify-center items-center "
-          >
-            {/* Header 1 */}
-
-            <div className="justify-between items-center  font-DM Sans ">
-              <Header />
-            </div>
-          </section>
-
-          {/* Section */}
-
-          <div className="inline-flex justify-end items-start">
-            <Section />
-          </div>
-
-          {/* Slider Header */}
-
-          <section
-            className="
-         flex  flex-col justify-center items-center 
-         "
-          >
-            {/* Heading */}
-
+          <section className="flex  flex-col justify-center items-center">
             <section
               className="
               hero  flex flex-col justify-center items-start  font-DM Sans gap-10 
@@ -48,8 +19,6 @@ function LandingPage() {
               rounded-[40px] border border-[rgba(255,255,255,0.30)] bg-gradient-to-r from-[rgba(255,255,255,0.10)] via-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.60)] backdrop-blur-[16px]
           "
             >
-              {/* Frame 5  */}
-
               <div
                 className=" 
               flex flex-col items-start gap-4 self-stretch    
@@ -57,28 +26,16 @@ function LandingPage() {
               >
                 {/* Frame 6 */}
 
-                <div
-                  className="
-              flex flex-col items-start gap-4
-            "
-                >
-                  <h1
-                    className="
-                
-                text-[68px] font-sans font-bold leading-[1.1] text-orange-400"
-                  >
+                <div className="flex flex-col items-start gap-4">
+                  <h1 className="text-[68px] font-sans font-bold leading-[1.1] text-orange-500">
                     Perfect Pieces{" "}
-                    <span
-                      className="
-                  
-                  text-gray-500 dark:text-black text-[68px] font-dm-sans font-bold leading-[110%]"
-                    >
+                    <span className="text-heading-black text-[68px] font-dm-sans font-bold leading-[110%]">
                       for
                     </span>
                     <span
                       className="
                   flex 
-                  text-gray-500 dark:text-black text-[68px] font-dm-sans font-bold leading-[110%]"
+                  text-heading-black text-[68px] font-dm-sans font-bold leading-[110%]"
                     >
                       Every Corner You Love.
                     </span>
@@ -101,7 +58,6 @@ function LandingPage() {
               flex w-[195px] px-9 py-6 justify-center items-center gap-2
             bg-brown rounded-[40px]
               "
-                // Link "Eplore Button"
                 href="/"
               >
                 <h1 className="font-DM Sans text-white text-center text-[18px] font-bold leading-[18px]">
@@ -184,14 +140,11 @@ function LandingPage() {
             Choosing Us
           </h1>
 
-          {/* Frame 3746 (3 title) */}
-
           <div
             className="
-            flex justify-between items-center  flex-1
+            flex justify-center items-start gap-[60px] flex-1
           "
           >
-            {/* Frame 3743 (Unique facilities) */}
             <div
               className="
               flex flex-col justify-center items-start gap-4  
@@ -200,7 +153,7 @@ function LandingPage() {
               <h1
                 className="
                 text-white font-DM Sans
-                text-[20px]  font-bold leading-normal tracking-[0.4px]
+                text-[28px]  font-bold leading-normal tracking-[0.4px]
               "
               >
                 Unique facilities
@@ -208,12 +161,12 @@ function LandingPage() {
 
               <h2
                 className="
-                w-[240.602px]
-                text-white font-DM Sans text-[14px] font-normal  leading-[20px] tracking-[0.28px]
+                w-[240px] text-white font-DM Sans text-dm-base font-normal
               "
               >
-                Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
-                dalar consectur elementum tempus hac.
+                Furnitech offers personalized recommendations, easy checkout,
+                and top-tier customer support to ensure a seamless shopping
+                experience.
               </h2>
             </div>
 
@@ -225,20 +178,20 @@ function LandingPage() {
             >
               <h1
                 className="
-              text-white font-DM Sans
-                text-[20px]  font-bold leading-normal tracking-[0.4px]
+              text-white 
+                text-[28px]  font-bold leading-normal tracking-[0.4px]
               "
               >
                 Affordable Price
               </h1>
               <h2
                 className="
-                  w-[240.602px]
-                text-white font-DM Sans text-[14px] font-normal  leading-[20px] tracking-[0.28px]
+                  w-[240px] text-white font-DM Sans text-dm-base font-normal
+
               "
               >
-                Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
-                dalar consectur elementum tempus hac.
+                We provide high-quality products at competitive prices, with
+                clear pricing and regular promotions to offer great value.
               </h2>
             </div>
 
@@ -252,19 +205,19 @@ function LandingPage() {
               <h1
                 className="
                 text-white font-DM Sans
-                text-[20px]  font-bold leading-normal tracking-[0.4px]
+                text-[28px]  font-bold leading-normal tracking-[0.4px]
               "
               >
                 Wide Choices
               </h1>
               <h2
                 className="
-                w-[240.602px]
-                text-white font-DM Sans text-[14px] font-normal  leading-[20px] tracking-[0.28px]
+                w-[240px] text-white font-DM Sans text-dm-base font-normal
+
               "
               >
-                Lorem ipsum dolor sit amet consecte tur adipiscing elit semper
-                dalar consectur elementum tempus hac.
+                Explore our wide range of furniture and home decor, updated
+                regularly to meet every style and need.
               </h2>
             </div>
           </div>
@@ -853,6 +806,6 @@ function LandingPage() {
       </section>
     </>
   );
-};
+}
 
 export default LandingPage;
