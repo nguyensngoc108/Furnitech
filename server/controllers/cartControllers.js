@@ -5,11 +5,11 @@ const Product = require("../models/Products");
 
 const getCartInfo = async (req, res) => {
   try {
-    const { userId } = req.params;
-    console.log(userId);
+    const { user_id } = req.params;
+    console.log(user_id);
 
     // Find all carts for the user
-    const carts = await Cart.find({ user_id: userId }).populate(
+    const carts = await Cart.find({ user_id: user_id }).populate(
       "items.product_id"
     );
 
@@ -26,7 +26,7 @@ const getCartInfo = async (req, res) => {
 
     // If all carts are completed, create a new one
     let newCart = new Cart({
-      user_id: userId,
+      user_id: user_id,
       items: [],
       totalPrice: 0,
     });
