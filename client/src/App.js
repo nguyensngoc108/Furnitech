@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ToastContainer } from './utils/toast';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
 import PrivateRoute from './components/PrivateRoute';
-import Header from './components/Header';
+import Header from './components/header';
 import Checkout from './pages/Checkout.js';
 
 const Layout = lazy(() => import('./layout/Layout.js'));

@@ -1,8 +1,8 @@
 // src/App.js
 import React from "react";
-import Header from "../components/Header.js";
-import Section from "../components/Section.js";
-import Footer from "../components/Footer.js";
+import Header from "../components/header.js";
+import Section from "../components/section.js";
+import Footer from "../components/footer.js";
 
 function LandingPage() {
   return (

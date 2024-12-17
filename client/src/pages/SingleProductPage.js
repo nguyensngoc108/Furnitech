@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import api from '../services/api';
 
 function SingleProductPage() {
