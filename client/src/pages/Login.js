@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
+import FormInput from "../components/FormInput";
+import PasswordInput from "../components/PasswordInput";
+import Button from "../components/Button";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -29,52 +32,66 @@ function Login({ onLogin }) {
     }
   };
 
+  const handleRegisterRedirect = () => {
+    navigate("/signup");
+  };
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-md">
-        <h2 className="text-2xl font-bold text-center">Login</h2>
-        <form className="space-y-6" onSubmit={handleLogin}>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-              required
-              className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-              className="w-full px-3 py-2 mt-1 border rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200"
-          >
-            Login
-          </button>
-        </form>
-        <p className="text-center text-sm text-gray-600">
-          Not a member?{" "}
-          <Link to="/signup" className="text-blue-500 hover:underline">
-            Register here
-          </Link>
-        </p>
+    <div className="flex items-center justify-center min-h-screen bg-brown-500">
+      <div className="flex bg-white rounded-3xl shadow-lg w-[1020px] mt-[80px]">
+        <div
+          className="w-1/2 bg-cover bg-center rounded-l-lg"
+          style={{ backgroundImage: "url(./assets/loginImage.png)" }}
+        ></div>
+        <div className="w-1/2 py-28 px-16">
+          <form className="space-y-[40px]" onSubmit={handleLogin}>
+            <h2 className="text-display-3 text-heading-black font-bold">
+              Login to your{" "}
+              <span className=" text-orange-500"> Furnitech </span>
+              account.
+            </h2>
+            <div className="space-y-4">
+              <FormInput
+                type="email"
+                id="email"
+                label="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                required
+                className="border-b-2 focus:ring-0"
+              />
+              <PasswordInput
+                type="password"
+                id="password"
+                label="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                required
+                className="border-b-2 focus:ring-0"
+              />
+            </div>
+            <Button
+              type="submit"
+              text="Login"
+              onClick={handleLogin}
+              className="w-full"
+            >
+              Login
+            </Button>
+            <p className="text-dm-base font-DM Sans mt-2 text-center font-semibold text-neutral-text-gray">
+              Don't have an account?{" "}
+              <button
+                onClick={handleRegisterRedirect}
+                className="text-orange-500 underline font-bold"
+                type="button"
+              >
+                Register here
+              </button>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
