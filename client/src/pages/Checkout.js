@@ -75,13 +75,13 @@ function Checkout() {
             </li>
             <li className="flex justify-between">
               <span>Shipping Address</span>
-              <span className="font-medium">
-                {customerDetails.address}
-              </span>
+              <span className="font-medium">{customerDetails.address}</span>
             </li>
             <li className="flex justify-between">
               <span>Delivery Fee</span>
-              <span className="font-medium">${orderDetails.price_info.shipping}</span>
+              <span className="font-medium">
+                ${orderDetails.price_info.shipping}
+              </span>
             </li>
           </ul>
           <hr className="border-brown-700 my-4" />

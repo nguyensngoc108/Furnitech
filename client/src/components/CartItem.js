@@ -44,7 +44,9 @@ function CartItem({ item, onQuantityChange, onRemoveItem }) {
           </button>
         </div>
       </div>
-      <p className="text-lg font-bold text-gray-800">${item.totalPrice.toFixed(2)}</p>
+      <p className="text-lg font-bold text-gray-800">
+        ${item.totalPrice.toFixed(2)}
+      </p>
     </div>
   );
 }

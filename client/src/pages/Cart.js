@@ -54,7 +54,11 @@ function Cart() {
   const calculateShipping = () => 5; // Example shipping cost
   const calculateTax = () => (calculateTotal() * 0.1).toFixed(2);
   const calculateFinalTotal = () =>
-    (calculateTotal() + calculateShipping() + parseFloat(calculateTax())).toFixed(2);
+    (
+      calculateTotal() +
+      calculateShipping() +
+      parseFloat(calculateTax())
+    ).toFixed(2);
 
   // Handle quantity change
   const handleQuantityChange = async (itemId, newQuantity) => {
@@ -94,7 +98,9 @@ function Cart() {
         product_id: itemId,
       });
       if (response.data.success) {
-        setCartItems((prevItems) => prevItems.filter((item) => item._id !== itemId));
+        setCartItems((prevItems) =>
+          prevItems.filter((item) => item._id !== itemId)
+        );
       } else {
         alert("Failed to remove item.");
       }

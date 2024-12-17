@@ -1,8 +1,8 @@
 // src/App.js
 import React from "react";
-import Header from "../components/header.js";
-import Section from "../components/section.js";
-import Footer from "../components/footer.js";
+import Header from "../components/Header.js";
+import Section from "../components/Section.js";
+import Footer from "../components/Footer.js";
 
 function LandingPage() {
   return (
@@ -10,6 +10,7 @@ function LandingPage() {
       <section className="w-[1920px] h-[6178px] bg-brown-400">
         <section
           className="w-[1920px] h-[1024px] shrink-0"
+          // Background 1
           style={{ backgroundImage: `url('./assets/Container.jpg')` }}
         >
           <section
@@ -17,13 +18,11 @@ function LandingPage() {
           
          flex  flex-col justify-center items-center "
           >
-            {/* Background 1 */}
-
-            {/* Header 1
+            {/* Header 1 */}
 
             <div className="justify-between items-center  font-DM Sans ">
               <Header />
-            </div> */}
+            </div>
           </section>
 
           {/* Section */}
@@ -44,7 +43,8 @@ function LandingPage() {
             <section
               className="
               hero  flex flex-col justify-center items-start  font-DM Sans gap-10 
-              w-[868px] p-[60px]              
+              w-[868px] p-[60px]       
+              absolute top-[290px] left-[312px]       
               rounded-[40px] border border-[rgba(255,255,255,0.30)] bg-gradient-to-r from-[rgba(255,255,255,0.10)] via-[rgba(255,255,255,0.30)] to-[rgba(255,255,255,0.60)] backdrop-blur-[16px]
           "
             >
@@ -122,6 +122,7 @@ function LandingPage() {
             <section
               className="
             inline-flex flex-col items-end gap-2
+            absolute top-[771px] left-[1348px]
           "
             >
               <h1
