@@ -1,7 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const { checkout } = require("../controllers/orderControllers.js");
+const {
+  addOrder,
+  updateOrder,
+  deleteOrder,
+  getOrder,
+  getOrders,
+} = require("../controllers/orderControllers.js");
 
 router.post("/add", addOrder);
 

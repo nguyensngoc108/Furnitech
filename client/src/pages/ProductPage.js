@@ -1,10 +1,10 @@
 // src/pages/ProductPage.js
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import api from '../services/api';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
+import api from "../services/api";
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -13,10 +13,10 @@ function ProductPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await api.get('/products');
+        const response = await api.get("/products");
         setProducts(response.data.data);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
       }
     };
 
@@ -29,22 +29,22 @@ function ProductPage() {
 
   const handleAddToCart = async (productId) => {
     try {
-      const userId = localStorage.getItem('userId');
+      const userId = localStorage.getItem("userId");
       if (!userId) {
-        navigate('/login');
+        navigate("/login");
         return;
       }
 
-      const response = await api.post('/carts/add-item', {
+      const response = await api.post("/carts/add-item", {
         user_id: userId,
         product_id: productId,
       });
 
-      toast.success('Product added to cart successfully!');
-      console.log('Product added to cart:', response.data);
+      toast.success("Product added to cart successfully!");
+      console.log("Product added to cart:", response.data);
     } catch (error) {
-      toast.error('Error adding product to cart.');
-      console.error('Error adding product to cart:', error);
+      toast.error("Error adding product to cart.");
+      console.error("Error adding product to cart:", error);
     }
   };
 
@@ -71,7 +71,9 @@ function ProductPage() {
                 <p className="text-gray-700">{product.description}</p>
                 <p className="text-gray-900 font-bold">${product.price}</p>
                 <p className="text-gray-600">Quantity: {product.quantity}</p>
-                <p className="text-gray-600">Category: {product.categoryId.name}</p>
+                <p className="text-gray-600">
+                  Category: {product.categoryId.name}
+                </p>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();

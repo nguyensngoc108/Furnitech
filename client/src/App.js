@@ -9,7 +9,7 @@ import {
 import { ToastContainer } from "./utils/toast";
 import AccessibleNavigationAnnouncer from "./components/AccessibleNavigationAnnouncer";
 import PrivateRoute from "./components/PrivateRoute";
-import Header from "./components/header";
+import Header from "./components/Header.js";
 import Checkout from "./pages/Checkout.js";
 
 const Layout = lazy(() => import("./layout/Layout.js"));
@@ -19,7 +19,7 @@ const UserProfile = lazy(() => import("./pages/UserProfile"));
 const Register = lazy(() => import("./pages/Register"));
 const ForgetPassword = lazy(() => import("./pages/ForgotPassword.js"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword.js"));
-const ProductPage = lazy(() => import("./pages/ProductPage"));
+const ProductPage = lazy(() => import("./pages/ProductPage.js"));
 const SingleProductPage = lazy(() => import("./pages/SingleProductPage.js")); // Import SingleProductPage
 const Cart = lazy(() => import("./pages/Cart.js"));
 const ShippingDetails = lazy(() => import("./pages/ShippingDetails.js"));

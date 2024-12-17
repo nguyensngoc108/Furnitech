@@ -16,8 +16,6 @@ router.post("/add-item", addItem);
 
 router.post("/remove", removeFromCart);
 
-router.post("/removeAll", removeAllFromCart);
-
 router.get("/:user_id", getCartInfo);
 
 router.post("/remove-item", removeItem);
