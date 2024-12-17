@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
-import api from "../services/api";
+import api from "../services/api.js";
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
