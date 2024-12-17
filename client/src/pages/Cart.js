@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 import CartItem from "../components/CartItem";
 import api from "../services/api";
 

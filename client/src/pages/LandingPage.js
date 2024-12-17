@@ -1,8 +1,8 @@
 // src/App.js
 import React from "react";
-import Header from "../components/header.js";
-import Section from "../components/section.js";
-import Footer from "../components/footer.js";
+import Header from "../components/Header.js";
+import Section from "../components/Section.js";
+import Footer from "../components/Footer.js";
 
 const LandingPage = () => {
   return (
@@ -10,7 +10,6 @@ const LandingPage = () => {
       <section className="w-[1920px] h-[6178px] bg-brown-400">
         <section
           className="w-[1920px] h-[1024px] shrink-0"
-
           // Background 1
           style={{ backgroundImage: `url('./assets/Container.jpg')` }}
         >
@@ -19,8 +18,6 @@ const LandingPage = () => {
           
          flex  flex-col justify-center items-center "
           >
-
-
             {/* Header 1 */}
 
             <div className="justify-between items-center  font-DM Sans ">

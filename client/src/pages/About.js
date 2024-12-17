@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/header";
+import Header from "../components/Header";
 function About() {
   const [teamMembers, setTeamMembers] = useState([]);
 
@@ -47,7 +47,6 @@ function About() {
   }, []);
 
   return (
-
     <div>
       {/* Header */}
       <div className=" w-[1920px] justify-between items-center  font-DM Sans shrink-0 ">
@@ -55,8 +54,6 @@ function About() {
       </div>
 
       <div className="min-h-screen flex flex-col bg-brown-500 items-center px-6 py-[90px]">
-
-
         {/* Description */}
         <div className="max-w-6xl w-full space-y-[60px]">
           <h2 className="text-display-3 font-bold text-heading-black text-center">
@@ -88,7 +85,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
