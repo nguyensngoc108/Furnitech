@@ -45,5 +45,14 @@ const ProductSchema = new mongoose.Schema({
 
 ProductSchema.plugin(softDelete);
 
+// virtual to the categories model
+
+ProductSchema.virtual('category', {
+    ref: 'Category',
+    localField: 'categoryId',
+    foreignField: '_id',
+    justOne: true
+});
+
 module.exports = mongoose.model('Product', ProductSchema);
 

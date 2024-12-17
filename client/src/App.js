@@ -5,6 +5,7 @@ import { ToastContainer } from './utils/toast';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
+import Checkout from './pages/Checkout.js';
 
 const Layout = lazy(() => import('./layout/Layout.js'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
@@ -13,6 +14,10 @@ const UserProfile = lazy(() => import('./pages/UserProfile'));
 const Register = lazy(() => import('./pages/Register'));
 const ForgetPassword = lazy(() => import('./pages/ForgotPassword.js'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword.js'));
+const ProductPage = lazy(() => import('./pages/ProductPage'));
+const SingleProductPage = lazy(() => import('./pages/SingleProductPage.js')); // Import SingleProductPage
+const Cart = lazy(() => import('./pages/Cart.js'));
+const ShippingDetails = lazy(() => import('./pages/ShippingDetails.js'));
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -53,11 +58,14 @@ const App = () => {
           <Route path="/forgot-password" element={<ForgetPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/landing" element={<LandingPage />} />
-
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/products/:productId" element={<SingleProductPage />} /> {/* Add route for SingleProductPage */}
           <Route path="/profile" element={<PrivateRoute component={UserProfile} />} />
           <Route path="/" element={<Navigate to="/landing" />} />
-
           <Route path="*" element={<Navigate to="/landing" />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/shipping" element={<ShippingDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Suspense>
     </Router>

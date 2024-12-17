@@ -13,6 +13,14 @@ const Header = ({ user, onLogout }) => {
     }
   };
 
+  const handleProductsClick = () => {
+    navigate('/products');
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
+
   return (
     <nav className="flex justify-between items-center py-4 px-6 bg-white shadow-md">
       <a href="/" className="flex items-center">
@@ -22,8 +30,14 @@ const Header = ({ user, onLogout }) => {
         </span>
       </a>
       <div className="flex items-center space-x-4">
+        <button onClick={handleProductsClick} className="px-4 py-2 bg-green-500 text-white rounded-md">
+          Products
+        </button>
         <div onClick={handlePersonIconClick} className="cursor-pointer">
           <img src="./assets/person-icon.svg" alt="Person Icon" className="w-6 h-6" />
+        </div>
+        <div onClick={handleCartClick} className="cursor-pointer">
+          <img src="./assets/cart-icon.svg" alt="Cart Icon" className="w-6 h-6" />
         </div>
         {user && (
           <button onClick={onLogout} className="ml-4 px-4 py-2 bg-blue-500 text-white rounded-md">

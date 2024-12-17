@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const OrderSchema = new Schema({
-  product_id: {
+  cart_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
+    ref: "Cart",
     required: true,
   },
   user_id: {
@@ -13,22 +13,23 @@ const OrderSchema = new Schema({
     ref: "User",
     required: true,
   },
-  quantity: {
-    type: Number,
-    required: true,
-  },
   price: {
     type: Number,
     required: true,
   },
-  customer: {
-    type: String,
+  //create price_info object
+  price_info: {
+    type: Object,
     required: true,
+  },
+  customer: {
+    type: Object,
+    required: false,
   },
   status: {
     type: String,
-    enum: ["Pending", "Shipped", "Delivered", "Cancelled"],
-    default: "Pending",
+    enum: [ "Shipped", "Delivered", "Cancelled"],
+    default: "Shipped",
   },
   orderDate: {
     type: Date,

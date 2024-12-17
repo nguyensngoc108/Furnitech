@@ -2,7 +2,14 @@ const Products = require("../models/Products");
 
 const getProducts = async (req, res) => {
   try {
-    const products = await Products.find({});
+    const products = await Products.find({}).populate("categoryId" , "name isFeatured");
+    if (!products) {
+      return res.status(400).json({
+        success: false,
+        msg: "No products found!",
+      });
+    }
+
     res.status(200).json({
       success: true,
       data: products,
@@ -68,7 +75,7 @@ const addProduct = async (req, res) => {
   try {
     let product = req.body;
     let newProduct = new Products({
-    name: product.name,
+      name: product.name,
       description: product.description,
       quantity: product.quantity,
       price: product.price,
@@ -87,41 +94,41 @@ const addProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
-    try {
-        let product = req.body;
-        let productId = req.params.productId;
-        let categoryId = req.params.categoryId;
-        let updatedProduct = {
-        name: product.name,
-        description: product.description,
-        quantity: product.quantity,
-        price: product.price,
-        categoryId: product.categoryId,
-        image: product.image,
-        isFeatured: product.isFeatured,
-        };
-        await Products.findByIdAndUpdate(productId, updatedProduct);
-        res.status(200).json({
-        success: true,
-        data: updatedProduct,
-        msg: "Product updated successfully!",
-        });
-    } catch (err) {
-        console.log(err);
-    }
+  try {
+    let product = req.body;
+    let productId = req.params.productId;
+    let categoryId = req.params.categoryId;
+    let updatedProduct = {
+      name: product.name,
+      description: product.description,
+      quantity: product.quantity,
+      price: product.price,
+      categoryId: product.categoryId,
+      image: product.image,
+      isFeatured: product.isFeatured,
+    };
+    await Products.findByIdAndUpdate(productId, updatedProduct);
+    res.status(200).json({
+      success: true,
+      data: updatedProduct,
+      msg: "Product updated successfully!",
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 const deleteProduct = async (req, res) => {
-    try {
-        const { productId } = req.params;
-        await Products.findByIdAndDelete(productId);
-        res.status(200).json({
-        success: true,
-        msg: "Product deleted successfully!",
-        });
-    } catch (err) {
-        console.log(err);
-    }
+  try {
+    const { productId } = req.params;
+    await Products.findByIdAndDelete(productId);
+    res.status(200).json({
+      success: true,
+      msg: "Product deleted successfully!",
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
@@ -131,5 +138,5 @@ module.exports = {
   getCategoryProducts,
   addProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
