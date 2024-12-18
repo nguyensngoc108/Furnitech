@@ -20,34 +20,39 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post("users/register", { email, phone, address, first_name, last_name, password });
-        const { data, token } = response.data;
+      const response = await api.post("users/register", {
+        email,
+        phone,
+        address,
+        first_name,
+        last_name,
+        password,
+      });
+      const { data, token } = response.data;
 
-        // Store user ID and token in local storage
-        localStorage.setItem("userId", data._id);
-        localStorage.setItem("token", token);
+      // Store user ID and token in local storage
+      localStorage.setItem("userId", data._id);
+      localStorage.setItem("token", token);
 
+      // Redirect or update UI as needed
+      navigate("/login");
 
-        // Redirect or update UI as needed
-        navigate("/login")
-
-        console.log("User registered successfully!");
-        }
-        catch(err){
-            console.log(err);
-        }
+      console.log("User registered successfully!");
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    const handleLoginRedirect = () => {
-        navigate("/login");
-    }
+  const handleLoginRedirect = () => {
+    navigate("/login");
+  };
 
-    const isStep1Valid = email && phone && address && first_name && last_name;
-    const isStep2Valid = password === confirmPassword && password.length >= 8;
+  const isStep1Valid = email && phone && address && first_name && last_name;
+  const isStep2Valid = password === confirmPassword && password.length >= 8;
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-brown-500">
-      <div className="bg-white rounded-3xl shadow-lg w-full max-w-[804px] px-8 sm:px-16 py-12">
+      <div className="bg-white rounded-3xl shadow-lg w-full max-w-[804px] px-8 sm:px-16 py-12 mt-[80px]">
         <form onSubmit={handleRegister} className="space-y-[40px]">
           <p className="text-dm-base font-DM Sans mt-2 text-left font-semibold text-brown-900">
             STEP {currentStep} IN 2

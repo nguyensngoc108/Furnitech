@@ -14,37 +14,38 @@ function CartItem({ item, onQuantityChange, onRemoveItem }) {
         alt={item.product.name}
         className="w-24 h-24 object-cover rounded-md"
       />
-      <div className="flex-1 px-4">
-        <h3 className="text-lg font-semibold text-gray-700">
+      <div className="flex-1 px-4 space-y-3">
+        <h3 className="text-xl font-semibold text-heading-black">
           {item.product.name}
         </h3>
-        <p className="text-gray-400 text-sm">{item.product.description}</p>
         <div className="flex space-x-6 items-center">
-          <div className="flex items-center">
+          <div className="flex items-center text-xl">
             <button
               onClick={() => handleQuantityChange(item.quantity - 1)}
               disabled={item.quantity <= 1}
-              className="text-gray-500 px-2 py-1"
+              className="text-gray-500 px-2 py-1 "
             >
               -
             </button>
             <span className="px-4">{item.quantity}</span>
             <button
               onClick={() => handleQuantityChange(item.quantity + 1)}
-              className="text-gray-500 px-2 py-1"
+              className="text-heading-black px-2 py-1 text-bold"
             >
               +
             </button>
           </div>
           <button
             onClick={() => onRemoveItem(item._id)}
-            className="text-red-500 text-sm"
+            className="text-brown-1000 text-base font-semibold"
           >
             Remove
           </button>
         </div>
       </div>
-      <p className="text-lg font-bold text-gray-800">${item.totalPrice.toFixed(2)}</p>
+      <p className="text-xl font-semibold text-gray-800">
+        ${item.totalPrice.toFixed(2)}
+      </p>
     </div>
   );
 }
