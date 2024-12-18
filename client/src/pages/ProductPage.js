@@ -136,15 +136,15 @@ function ProductPage() {
             {products.map((product) => (
               <div
                 key={product._id}
-                className="bg-white p-5 rounded-2xl shadow-md cursor-pointer"
+                className="rounded-2xl shadow-md cursor-pointer h-fit"
                 onClick={() => handleProductClick(product._id)}
               >
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover mb-4"
+                  className="w-full h-60 object-cover rounded-t-xl"
                 />
-                <div className="space-y-3">
+                <div className="space-y-3 bg-white p-5">
                   <div className="space-y-1">
                     <p className="text-brown-900 uppercase font-semibold text-sm">
                       {product.categoryId.name}

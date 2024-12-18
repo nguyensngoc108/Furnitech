@@ -173,7 +173,7 @@ function ShippingDetails() {
             />
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 text-xl">
             <div className="flex justify-between">
               <span className="text-gray-700">Subtotal:</span>
               <span className="text-gray-900 font-bold">${subtotal}</span>
