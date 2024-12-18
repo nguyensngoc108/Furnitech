@@ -10,6 +10,7 @@ import { ToastContainer } from "./utils/toast";
 import AccessibleNavigationAnnouncer from "./components/AccessibleNavigationAnnouncer";
 import PrivateRoute from "./components/PrivateRoute";
 import Header from "./components/Header.js";
+import Footer from "./components/Footer.js";
 import Checkout from "./pages/Checkout.js";
 
 const Layout = lazy(() => import("./layout/Layout.js"));
@@ -84,6 +85,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
         </Routes>
       </Suspense>
+      <Footer />
     </Router>
   );
 };

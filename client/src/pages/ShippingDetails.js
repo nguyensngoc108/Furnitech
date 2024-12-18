@@ -96,7 +96,7 @@ function ShippingDetails() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-brown-500">
+    <div className="flex items-center justify-center min-h-screen bg-brown-500 py-[120px]">
       <div className="bg-white rounded-3xl shadow-lg w-full max-w-[804px] px-8 sm:px-16 py-12">
         <form onSubmit={handleShippingInfo} className="space-y-[40px]">
           <h2 className="text-display-3 text-heading-black font-bold text-left">

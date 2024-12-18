@@ -126,7 +126,7 @@ function Cart() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between min-h-screen max-h-fit bg-brown-500 px-[350px] py-[92px]">
+    <div className="flex flex-col lg:flex-row justify-between min-h-screen max-h-fit bg-brown-500 px-[350px] py-[120px]">
       {/* Cart Section */}
       <div className="w-full lg:w-2/3 bg-white rounded-3xl min-h-[474px] max-h-fit shadow-md p-8 space-y-6">
         <h2 className="text-display-4 text-heading-black font-bold font-DM Sans">

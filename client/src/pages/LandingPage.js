@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../components/Section.js";
-import Footer from "../components/Footer.js";
 
 function LandingPage() {
   return (
@@ -125,7 +124,7 @@ function LandingPage() {
 
         <section
           className="
-          flex w-[1920px] py-[80px] px-[350px] justify-center items-center gap-[92px]
+          flex w-full py-[80px] px-[350px] justify-center items-center gap-[92px]
           bg-brown
         "
         >
@@ -799,9 +798,6 @@ function LandingPage() {
               </div>
             </div>
           </section>
-
-          {/* Footer V6 */}
-          <Footer />
         </section>
       </section>
     </>

@@ -57,7 +57,7 @@ function Blog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-brown-500 px-6 py-[90px] space-y-16 ">
+    <div className="min-h-screen bg-brown-500 px-6 py-[120px] space-y-16 ">
       <h1 className="text-display-3 text-heading-black font-bold text-center mb-8">
         Style Your Home <br /> with Expert Furniture Tips and Ideas
       </h1>
