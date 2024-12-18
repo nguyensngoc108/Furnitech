@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import api from "../services/api";
 import Button from "../components/Button";
 import FormInput from "../components/FormInput";
+import BackButton from "../components/BackButton";
 
 function ShippingDetails() {
   const [email, setEmail] = useState("");
@@ -96,7 +97,10 @@ function ShippingDetails() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-brown-500 py-[120px]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-brown-500 py-[120px] px-[120px]">
+      <div className="self-start mb-8 pl-8">
+        <BackButton />
+      </div>
       <div className="bg-white rounded-3xl shadow-lg w-full max-w-[804px] px-8 sm:px-16 py-12">
         <form onSubmit={handleShippingInfo} className="space-y-[40px]">
           <h2 className="text-display-3 text-heading-black font-bold text-left">

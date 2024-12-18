@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Button from "../components/Button.js";
+import BackButton from "../components/BackButton.js";
 import api from "../services/api";
 
 function SingleProductPage() {
@@ -49,7 +50,10 @@ function SingleProductPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-brown-400 py-[120px] px-[120px]">
+    <div className="flex flex-col min-h-screen bg-brown-400 py-[120px] px-[120px] gap-8">
+      <div className="flex justify-start mb-8">
+        <BackButton />
+      </div>
       <main className="inline-flex gap-16 container mx-auto px-8 py-8 shadow-lg bg-white rounded-3xl max-w-screen-xl ">
         <img
           src={product.image}
