@@ -1,32 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../services/api";
 import '../styles/UserProfile.css';
 
 function UserProfile() {
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem("userId");
+
     if (!userId) {
-      navigate('/login');
+      navigate("/login");
       return;
     }
 
     const fetchUserData = async () => {
       try {
-        const response = await api.get(`/users/${userId}`);
+        const [userResponse, cartResponse] = await Promise.all([
+          api.get(`/users/${userId}`),
+          api.get(`/carts/${userId}`),
+        ]);
         console.log('User data:', response.data.data);
-        setUser(response.data.data);
+        setUser(userResponse.data.data);
+        setCart(cartResponse.data.data.data);
       } catch (error) {
-        console.error('Error fetching user data:', error);
-        navigate('/login');
+        console.error("Error fetching data:", error);
+        navigate("/login");
       }
     };
+
+    // const fetchUserOrders = async () => {
+    //   try {
+    //     const response = await api.get(`/orders/allOrder/${userId}`);
+    //     console.log('User orders:', response.data.data);
+    //     setOrders(response.data.data);
+    //   } catch (error) {
+    //     console.error('Error fetching user orders:', error);
+    //     setError('Failed to fetch orders');
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
 
     const fetchUserOrders = async () => {
       try {
@@ -45,10 +64,11 @@ function UserProfile() {
     fetchUserOrders();
   }, [navigate]);
 
-  if (!user) {
+  if (!user || !cart) {
     return (
       <div>
-        Please <Link to="/login">log in</Link> or <Link to="/signup">register</Link> to view your profile.
+        Please <Link to="/login">log in</Link> or{" "}
+        <Link to="/signup">register</Link> to view your profile.
       </div>
     );
   }

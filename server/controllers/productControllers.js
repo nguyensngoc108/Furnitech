@@ -22,7 +22,7 @@ const getProducts = async (req, res) => {
 const getProduct = async (req, res) => {
   try {
     const { productId } = req.params;
-    const product = await Products.findById(productId);
+    const product = await Products.findById(productId).populate("categoryId", "name");
     if (!product) {
       return res.status(400).json({
         success: false,
@@ -79,6 +79,7 @@ const addProduct = async (req, res) => {
       description: product.description,
       quantity: product.quantity,
       price: product.price,
+      image: product.image,
       categoryId: product.categoryId,
       isFeatured: product.isFeatured,
     });

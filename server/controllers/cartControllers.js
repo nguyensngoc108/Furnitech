@@ -5,11 +5,11 @@ const Product = require("../models/Products");
 
 const getCartInfo = async (req, res) => {
   try {
-    const { userId } = req.params;
-    console.log(userId);
+    const { user_id } = req.params;
+    console.log(user_id);
 
     // Find all carts for the user
-    const carts = await Cart.find({ user_id: userId }).populate(
+    const carts = await Cart.find({ user_id: user_id }).populate(
       "items.product_id"
     );
 
@@ -26,7 +26,7 @@ const getCartInfo = async (req, res) => {
 
     // If all carts are completed, create a new one
     let newCart = new Cart({
-      user_id: userId,
+      user_id: user_id,
       items: [],
       totalPrice: 0,
     });
@@ -48,7 +48,7 @@ const getCartInfo = async (req, res) => {
 
 const addItem = async (req, res) => {
   try {
-    let { user_id, product_id } = req.body;
+    let { user_id, product_id, quantity } = req.body;
 
     const product = await Product.findById(product_id);
 
@@ -60,6 +60,68 @@ const addItem = async (req, res) => {
     }
 
     const cart = await Cart.findOne({ user_id });
+
+    if (!cart) {
+      let newCart = new Cart({
+        user_id,
+        items: [
+          {
+            product_id: product_id,
+            quantity: quantity,
+            price: product.price * quantity,
+          },
+        ],
+        totalPrice: product.price,
+      });
+
+      await newCart.save();
+
+      return res.status(200).json({
+        success: true,
+        data: newCart,
+        msg: "Product added to cart successfully!",
+      });
+    }
+
+    // if user already has a cart
+    let productIndex = cart.items.findIndex(
+      (item) => item.product_id.toString() === product_id
+    );
+
+    if (productIndex > -1) {
+      cart.items[productIndex].quantity += quantity;
+      cart.items[productIndex].price += product.price * quantity;
+    } else {
+      cart.items.push({
+        product_id: product_id,
+        quantity: quantity,
+        price: product.price * quantity,
+      });
+    }
+
+    cart.totalPrice += product.price * quantity;
+
+    await cart.save();
+
+    res.status(200).json({
+      success: true,
+      data: cart,
+      msg: "Product added to cart successfully!",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      success: false,
+      msg: "Server error",
+    });
+  }
+};
+
+const addToCart = async (req, res) => {
+  try {
+    let { user_id, product_id } = req.body;
+
+    const product = await Product.findById(product_id);
 
     if (!cart) {
       let newCart = new Cart({
@@ -83,7 +145,6 @@ const addItem = async (req, res) => {
       });
     }
 
-    // if user already has a cart
     let productIndex = cart.items.findIndex(
       (item) => item.product_id.toString() === product_id
     );
@@ -100,67 +161,6 @@ const addItem = async (req, res) => {
     }
 
     cart.totalPrice += product.price;
-
-    await cart.save();
-
-    res.status(200).json({
-      success: true,
-      data: cart,
-      msg: "Product added to cart successfully!",
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      success: false,
-      msg: "Server error",
-    });
-  }
-};
-
-const addToCart = async (req, res) => {
-  try {
-    let { user_id, product_id, quantity, price } = req.body;
-
-    const cart = await Cart.findOne({ user_id });
-
-    if (!cart) {
-      let newCart = new Cart({
-        user_id,
-        items: [
-          {
-            product_id,
-            quantity,
-            price,
-          },
-        ],
-        totalPrice: price * quantity,
-      });
-
-      await newCart.save();
-
-      return res.status(200).json({
-        success: true,
-        data: newCart,
-        msg: "Product added to cart successfully!",
-      });
-    }
-
-    let productIndex = cart.items.findIndex(
-      (item) => item.product_id.toString() === product_id
-    );
-
-    if (productIndex > -1) {
-      cart.items[productIndex].quantity += quantity;
-      cart.items[productIndex].price += product_id.price * quantity;
-    } else {
-      cart.items.push({
-        product_id,
-        quantity,
-        price: product_id.price * quantity,
-      });
-    }
-
-    cart.totalPrice += product_id.price * quantity;
 
     await cart.save();
 

@@ -11,6 +11,7 @@ function Cart() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [cartId, setCartId] = useState(null);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   // Fetch cart data
   useEffect(() => {
@@ -34,6 +35,7 @@ function Cart() {
             totalPrice: item.quantity * item.product_id.price, // Calculate total for clarity
           }));
           setCartItems(itemsWithDetails);
+          setTotalQuantity(cartData.items.reduce((total, item) => total + item.quantity, 0));
         } else {
           throw new Error("Failed to fetch cart data");
         }
@@ -54,7 +56,11 @@ function Cart() {
   const calculateShipping = () => 5; // Example shipping cost
   const calculateTax = () => (calculateTotal() * 0.1).toFixed(2);
   const calculateFinalTotal = () =>
-    (calculateTotal() + calculateShipping() + parseFloat(calculateTax())).toFixed(2);
+    (
+      calculateTotal() +
+      calculateShipping() +
+      parseFloat(calculateTax())
+    ).toFixed(2);
 
   // Handle quantity change
   const handleQuantityChange = async (itemId, newQuantity) => {
@@ -77,6 +83,7 @@ function Cart() {
               : item
           )
         );
+        setTotalQuantity((prevTotal) => prevTotal + newQuantity - cartItems.find(item => item._id === itemId).quantity);
       } else {
         alert("Failed to modify item quantity.");
       }
@@ -94,7 +101,11 @@ function Cart() {
         product_id: itemId,
       });
       if (response.data.success) {
-        setCartItems((prevItems) => prevItems.filter((item) => item._id !== itemId));
+        const removedItem = cartItems.find((item) => item._id === itemId);
+        setCartItems((prevItems) =>
+          prevItems.filter((item) => item._id !== itemId)
+        );
+        setTotalQuantity((prevTotal) => prevTotal - removedItem.quantity);
       } else {
         alert("Failed to remove item.");
       }
@@ -120,7 +131,7 @@ function Cart() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between min-h-screen max-h-fit bg-brown-500 px-[350px] py-[92px]">
+    <div className="flex flex-col lg:flex-row justify-between min-h-screen max-h-fit bg-brown-500 px-[350px] py-[120px]">
       {/* Cart Section */}
       <div className="w-full lg:w-2/3 bg-white rounded-3xl min-h-[474px] max-h-fit shadow-md p-8 space-y-6">
         <h2 className="text-display-4 text-heading-black font-bold font-DM Sans">

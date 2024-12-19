@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ToastContainer } from './utils/toast';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
 import PrivateRoute from './components/PrivateRoute';
-import Header from './components/header.js';
+import Header from './components/header';
 import Checkout from './pages/Checkout.js';
 
 const Layout = lazy(() => import('./layout/Layout.js'));
@@ -25,27 +25,27 @@ const App = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
-    const userName = localStorage.getItem('userName');
+    const userId = localStorage.getItem("userId");
+    const userName = localStorage.getItem("userName");
     if (userId && userName) {
       setUser({ _id: userId, name: userName });
     }
   }, []);
 
   const handleLogin = (user) => {
-    console.log('User logged in:', user);
-    localStorage.setItem('userId', user._id);
-    localStorage.setItem('token', user.token);
-    localStorage.setItem('userName', user.name);
+    console.log("User logged in:", user);
+    localStorage.setItem("userId", user._id);
+    localStorage.setItem("token", user.token);
+    localStorage.setItem("userName", user.name);
     setUser(user);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('userId');
-    localStorage.removeItem('token');
-    localStorage.removeItem('userName');
+    localStorage.removeItem("userId");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
     setUser(null);
-    console.log('User logged out');
+    console.log("User logged out");
   };
 
   return (
@@ -62,15 +62,25 @@ const App = () => {
           <Route path="/edit-profile" element={<PrivateRoute component={EditProfile} />} />
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/products" element={<ProductPage />} />
-          <Route path="/products/:productId" element={<SingleProductPage />} /> {/* Add route for SingleProductPage */}
-          <Route path="/profile" element={<PrivateRoute component={UserProfile} />} />
+          <Route
+            path="/products/:productId"
+            element={<SingleProductPage />}
+          />{" "}
+          {/* Add route for SingleProductPage */}
+          <Route
+            path="/profile"
+            element={<PrivateRoute component={UserProfile} />}
+          />
           <Route path="/" element={<Navigate to="/landing" />} />
           <Route path="*" element={<Navigate to="/landing" />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/shipping" element={<ShippingDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </Suspense>
+      <Footer />
     </Router>
   );
 };

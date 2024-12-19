@@ -28,7 +28,7 @@ const OrderSchema = new Schema({
   },
   status: {
     type: String,
-    enum: [ "Shipped", "Delivered", "Cancelled"],
+    enum: ["Shipped", "Delivered", "Cancelled"],
     default: "Shipped",
   },
   orderDate: {
@@ -37,18 +37,10 @@ const OrderSchema = new Schema({
   },
 });
 
-// virtual to user_id
-OrderSchema.virtual("user", {
-  ref: "User",
-  localField: "user_id",
-  foreignField: "_id",
-  justOne: true,
-});
-
-// virtual to product_id
-OrderSchema.virtual("product", {
-  ref: "Product",
-  localField: "product_id",
+// virtual to cart_id
+OrderSchema.virtual("cart", {
+  ref: "Cart",
+  localField: "cart_id",
   foreignField: "_id",
   justOne: true,
 });

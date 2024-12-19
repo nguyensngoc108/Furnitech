@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update readme">
+    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="fix header and product page UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/LandingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/LandingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/productControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/productControllers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +53,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Furnitech\client\public\assets" />
       <recent name="D:\Furnitech" />
     </key>
   </component>
@@ -169,7 +164,42 @@
       <option name="project" value="LOCAL" />
       <updated>1734262368622</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update readme">
+      <created>1734424371227</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1734424371227</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update addToCart">
+      <created>1734570199966</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734570199966</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update Profile">
+      <created>1734575221281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1734575221281</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix header and product page UI">
+      <created>1734599750545</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734599750545</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix header and product page UI">
+      <created>1734599825099</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1734599825099</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +218,9 @@
     <MESSAGE value="commit" />
     <MESSAGE value="BE update order and cart" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="update addToCart" />
+    <MESSAGE value="update Profile" />
+    <MESSAGE value="fix header and product page UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix header and product page UI" />
   </component>
 </project>
