@@ -64,7 +64,7 @@ function ProductPage() {
                   src="./assets/Furniture.svg"
                   className="
                                 w-[160px] h-[160px]
-                                rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]s
+
                             "
                 />
                 <h1
@@ -78,10 +78,10 @@ function ProductPage() {
               </div>
               <div className="flex flex-col items-start gap-5">
                 <img
-                  src="./assets/Decoration.svg"
+                  src="./assets/decor.svg"
                   className="
                                 w-[160px] h-[160px]
-                                rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
+
                             "
                 />
                 <h1
@@ -98,7 +98,7 @@ function ProductPage() {
                   src="./assets/Storage.svg"
                   className="
                                 w-[160px] h-[160px]
-                                rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
+
                             "
                 />
                 <h1
@@ -115,7 +115,7 @@ function ProductPage() {
                   src="./assets/Lighting.svg"
                   className="
                                 w-[160px] h-[160px]
-                                rounded-lg bg-lightgray bg-center bg-cover bg-no-repeat shadow-[0px_2px_12px_0px_rgba(20,20,43,0.08)]
+
                             "
                 />
                 <h1

@@ -66,19 +66,19 @@ const Header = ({ user, onLogout }) => {
         <a href="/" className="hover:text-brown">
           Home
         </a>
-        <a onClick={handleProductsClick} className="hover:text-brown">
+        <a onClick={handleProductsClick} className="hover:text-brown cursor-pointer">
           Products
         </a>
-        <a onClick={handleBlogClick} className="hover:text-brown">
+        <a onClick={handleBlogClick} className="hover:text-brown cursor-pointer">
           Blogs
         </a>
-        <a onClick={handleAboutClick} className="hover:text-brown">
+        <a onClick={handleAboutClick} className="hover:text-brown cursor-pointer">
           About Us
         </a>
       </div>
 
       <div className="flex items-center gap-6 pr-0">
-        <a onClick={handlePersonIconClick} className="cursor-pointer">
+        <a onClick={handlePersonIconClick} className="cursor-pointer hover:border-2 hover:border-brown rounded-full">
           <img
             src="./assets/person.svg"
             alt="person"
@@ -86,7 +86,7 @@ const Header = ({ user, onLogout }) => {
           />
         </a>
 
-        <a onClick={handleCartClick} className="cursor-pointer">
+        <a onClick={handleCartClick} className="cursor-pointer hover:border-2 hover:border-brown rounded-full">
           <img
             src="./assets/shopping.svg"
             alt="shopping cart"
