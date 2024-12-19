@@ -5,10 +5,12 @@ import api from "../services/api";
 
 function UserProfile() {
   const [user, setUser] = useState(null);
+  const [cart, setCart] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
+
     if (!userId) {
       navigate("/login");
       return;
@@ -16,10 +18,14 @@ function UserProfile() {
 
     const fetchUserData = async () => {
       try {
-        const response = await api.get(`/users/${userId}`);
-        setUser(response.data);
+        const [userResponse, cartResponse] = await Promise.all([
+          api.get(`/users/${userId}`),
+          api.get(`/carts/${userId}`),
+        ]);
+        setUser(userResponse.data.data);
+        setCart(cartResponse.data.data);
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        console.error("Error fetching data:", error);
         navigate("/login");
       }
     };
@@ -27,7 +33,7 @@ function UserProfile() {
     fetchUserData();
   }, [navigate]);
 
-  if (!user) {
+  if (!user || !cart) {
     return (
       <div>
         Please <Link to="/login">log in</Link> or{" "}
@@ -43,7 +49,7 @@ function UserProfile() {
       </header>
       <div className="UserProfile-info">
         <p>
-          <strong>Name:</strong> {user.name}
+          <strong>Name:</strong> {user.first_name} {user.last_name}
         </p>
         <p>
           <strong>Email:</strong> {user.email}
@@ -54,6 +60,26 @@ function UserProfile() {
         <p>
           <strong>Address:</strong> {user.address}
         </p>
+       </div>
+
+      <div className="UserProfile-cart">
+        <strong>My Cart: </strong>
+        {cart.items.length > 0 ? (
+          <ul>
+            {cart.items.map((item) => (
+              <li key={item.product_id._id}>
+                <p>Product ID: {item.product_id._id}</p>
+                <p>Name: {item.product_id.name}</p>
+                <p>Quantity: {item.quantity}</p>
+                <p>Price: ${item.price}</p>
+              </li>
+            ))}
+            <p>Total Price: ${cart.totalPrice}</p>
+            <p>Order Status: {cart.status}</p>
+          </ul>
+        ) : (
+          <p>Your cart is empty.</p>
+        )}
       </div>
       <button>Edit Profile</button>
     </div>

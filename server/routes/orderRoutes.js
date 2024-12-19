@@ -7,6 +7,7 @@ const {
   deleteOrder,
   getOrder,
   getOrders,
+  getOrdersByUser,
 } = require("../controllers/orderControllers.js");
 
 router.post("/add", addOrder);
@@ -18,5 +19,7 @@ router.delete("/delete/:orderId", deleteOrder);
 router.get("/:orderId", getOrder);
 
 router.get("/", getOrders);
+
+router.get("/user/:userId", getOrdersByUser);
 
 module.exports = router;

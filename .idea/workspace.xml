@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update">
+    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update addToCart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/cartControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/cartControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/productControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/productControllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/orderControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/orderControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/orderRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/orderRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734424371227</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update addToCart">
+      <created>1734570199966</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734570199966</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +198,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="BE update order and cart" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="update addToCart" />
+    <option name="LAST_COMMIT_MESSAGE" value="update addToCart" />
   </component>
 </project>
