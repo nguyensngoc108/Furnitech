@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update Profile">
-      <change afterPath="$PROJECT_DIR$/client/public/assets/Secondary Cricle Button.svg" afterDir="false" />
+    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="fix header and product page UI">
       <change afterPath="$PROJECT_DIR$/client/public/assets/decor.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/public/assets/lighting.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -190,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734575221281</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix header and product page UI">
+      <created>1734599750545</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1734599750545</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +217,7 @@
     <MESSAGE value="update readme" />
     <MESSAGE value="update addToCart" />
     <MESSAGE value="update Profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Profile" />
+    <MESSAGE value="fix header and product page UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix header and product page UI" />
   </component>
 </project>
