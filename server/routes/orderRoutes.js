@@ -17,7 +17,7 @@ router.delete("/delete/:orderId", deleteOrder);
 
 router.get("/:orderId", getOrder);
 
-router.get("/", getOrders);
+router.get("/allOrder/:userId", getOrders);
 
 
 

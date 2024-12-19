@@ -75,6 +75,28 @@ const loginUser = async (req, res, next) => {
   }
 };
 
+const editProfile = async (req, res) => {
+  try {
+    let user = req.body;
+    user.first_name = ucfirst(user.first_name);
+    user.last_name = ucfirst(user.last_name);
+
+    const updatedUser =
+      await User.findByIdAndUpdate(req
+        .params.id, user, { new: true });
+
+    res.status(200).json({
+      success: true,
+      data: updatedUser,
+      msg: "User updated successfully!",
+    });
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+
+
 const getUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -117,6 +139,7 @@ module.exports = {
   register,
   loginUser,
   getUsers,
+  editProfile,
   getUserData,
   getUserById,
 };

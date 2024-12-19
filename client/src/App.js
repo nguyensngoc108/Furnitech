@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ToastContainer } from './utils/toast';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
 import PrivateRoute from './components/PrivateRoute';
-import Header from './components/header';
+import Header from './components/header.js';
 import Checkout from './pages/Checkout.js';
 
 const Layout = lazy(() => import('./layout/Layout.js'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
 const Login = lazy(() => import('./pages/Login'));
 const UserProfile = lazy(() => import('./pages/UserProfile'));
+const EditProfile = lazy(() => import('./pages/EditProfile'));
 const Register = lazy(() => import('./pages/Register'));
 const ForgetPassword = lazy(() => import('./pages/ForgotPassword.js'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword.js'));
@@ -18,6 +19,7 @@ const ProductPage = lazy(() => import('./pages/ProductPage'));
 const SingleProductPage = lazy(() => import('./pages/SingleProductPage.js')); // Import SingleProductPage
 const Cart = lazy(() => import('./pages/Cart.js'));
 const ShippingDetails = lazy(() => import('./pages/ShippingDetails.js'));
+
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -57,6 +59,7 @@ const App = () => {
           <Route path="/signup" element={<Register />} />
           <Route path="/forgot-password" element={<ForgetPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/edit-profile" element={<PrivateRoute component={EditProfile} />} />
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/products" element={<ProductPage />} />
           <Route path="/products/:productId" element={<SingleProductPage />} /> {/* Add route for SingleProductPage */}

@@ -1,18 +1,41 @@
+
 const Order = require("../models/Orders");
 const Cart = require("../models/Carts");
 const User = require("../models/Users");
 
 const getOrders = async (req, res) => {
-  try {
-    const orders = await Order.find({}).populate("user_id");
-    res.status(200).json({
-      success: true,
-      data: orders,
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
+    try {
+      const user_id = req.params.userId;
+      console.log("user_id", user_id);
+      const orders = await Order.find({ user_id: user_id })
+        .populate("user_id")
+        .populate({
+          path: "cart_id",
+          populate: {
+            path: "items.product_id",
+            model: "Product",
+          },
+        });
+  
+      if (!orders || orders.length === 0) {
+        return res.status(200).json({
+          success: false,
+          msg: "No orders found!",
+        });
+      }
+  
+      res.status(200).json({
+        success: true,
+        data: orders,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({
+        success: false,
+        msg: "Server error",
+      });
+    }
+  };
 
 const getOrder = async (req, res) => {
   try {
