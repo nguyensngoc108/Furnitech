@@ -9,6 +9,7 @@ import api from "../services/api";
 function SingleProductPage() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +36,7 @@ function SingleProductPage() {
       const response = await api.post("/carts/add-item", {
         user_id: userId,
         product_id: productId,
+        quantity: quantity,
       });
 
       toast.success("Product added to cart successfully!");
@@ -43,6 +45,14 @@ function SingleProductPage() {
       toast.error("Error adding product to cart.");
       console.error("Error adding product to cart:", error);
     }
+  };
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
   if (!product) {
@@ -93,6 +103,21 @@ function SingleProductPage() {
             <p className="text-gray-900 font-semibold text-4xl">
               ${product.price}
             </p>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={handleDecrement}
+                className="px-4 py-2 bg-gray-200 rounded"
+              >
+                -
+              </button>
+              <span className="text-2xl">{quantity}</span>
+              <button
+                onClick={handleIncrement}
+                className="px-4 py-2 bg-gray-200 rounded"
+              >
+                +
+              </button>
+            </div>
             <Button
               onClick={handleAddToCart}
               text="Add To Cart"

@@ -34,7 +34,7 @@ function ProductPage() {
         return;
       }
 
-      const response = await api.post("/carts/add-item", {
+      const response = await api.post("/carts/add", {
         user_id: userId,
         product_id: productId,
       });
@@ -164,8 +164,7 @@ function ProductPage() {
                 <Button
                   text="Add To Cart"
                   onClick={(e) => {
-                    e.stopPropagation();
-                    handleAddToCart(product._id);
+                    handleAddToCart();
                   }}
                   className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
                 />

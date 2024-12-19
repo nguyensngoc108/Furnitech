@@ -11,6 +11,7 @@ function Cart() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [cartId, setCartId] = useState(null);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
   // Fetch cart data
   useEffect(() => {
@@ -34,6 +35,7 @@ function Cart() {
             totalPrice: item.quantity * item.product_id.price, // Calculate total for clarity
           }));
           setCartItems(itemsWithDetails);
+          setTotalQuantity(cartData.items.reduce((total, item) => total + item.quantity, 0));
         } else {
           throw new Error("Failed to fetch cart data");
         }
@@ -81,6 +83,7 @@ function Cart() {
               : item
           )
         );
+        setTotalQuantity((prevTotal) => prevTotal + newQuantity - cartItems.find(item => item._id === itemId).quantity);
       } else {
         alert("Failed to modify item quantity.");
       }
@@ -98,9 +101,11 @@ function Cart() {
         product_id: itemId,
       });
       if (response.data.success) {
+        const removedItem = cartItems.find((item) => item._id === itemId);
         setCartItems((prevItems) =>
           prevItems.filter((item) => item._id !== itemId)
         );
+        setTotalQuantity((prevTotal) => prevTotal - removedItem.quantity);
       } else {
         alert("Failed to remove item.");
       }
