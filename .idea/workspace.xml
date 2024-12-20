@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update productControllers">
+    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="fix product page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/cartControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/cartControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/styles/UserProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/UserProfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/userControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/userControllers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734601006838</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix product page">
+      <created>1734616880370</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1734616880370</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +239,7 @@
     <MESSAGE value="update Profile" />
     <MESSAGE value="fix header and product page UI" />
     <MESSAGE value="update productControllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="update productControllers" />
+    <MESSAGE value="fix product page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix product page" />
   </component>
 </project>

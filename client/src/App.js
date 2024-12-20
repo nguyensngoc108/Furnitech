@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ToastContainer } from './utils/toast';
 import AccessibleNavigationAnnouncer from './components/AccessibleNavigationAnnouncer';
 import PrivateRoute from './components/PrivateRoute';
-import Header from './components/header';
+import Header from './components/Header';
 import Checkout from './pages/Checkout.js';
+import Footer from './components/Footer';
 
 const Layout = lazy(() => import('./layout/Layout.js'));
 const LandingPage = lazy(() => import('./pages/LandingPage'));
@@ -19,6 +20,8 @@ const ProductPage = lazy(() => import('./pages/ProductPage'));
 const SingleProductPage = lazy(() => import('./pages/SingleProductPage.js')); // Import SingleProductPage
 const Cart = lazy(() => import('./pages/Cart.js'));
 const ShippingDetails = lazy(() => import('./pages/ShippingDetails.js'));
+const About = lazy(() => import('./pages/About.js'));
+const Blog = lazy(() => import('./pages/Blog.js'));
 
 
 const App = () => {

@@ -14,18 +14,27 @@ const register = async (req, res, next) => {
     user.first_name = ucfirst(user.first_name);
     user.last_name = ucfirst(user.last_name);
 
+    const verifyEmail = await User.findOne({ email: user.email });
+    if(verifyEmail){
+        return res.status(400).json({
+            success: false,
+            msg: "Email already exists!",
+        });
+    }
+
     const password = (user.password = await bcrypt.hashSync(user.password, 10));
 
     const token = signInToken(user);
     console.log(token);
 
     let newUser = new User({
-      first_name: user.first_name,
-      last_name: user.last_name,
-      email: user.email,
+      first_name: user?.first_name,
+      last_name: user?.last_name,
+      email: user?.email,
       password: password,
       token: token,
       phone: user.phone,
+      address : user?.address,
     });
 
     await newUser.save();
