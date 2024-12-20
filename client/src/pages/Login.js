@@ -5,6 +5,7 @@ import api from "../services/api";
 import FormInput from "../components/FormInput";
 import PasswordInput from "../components/PasswordInput";
 import Button from "../components/Button";
+import { toast } from "react-toastify";
 
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -28,6 +29,7 @@ function Login({ onLogin }) {
       onLogin({ _id: data._id, name: data.first_name + " " + data.last_name });
       navigate("/");
     } catch (error) {
+      toast.error("Please check your login information.");
       console.error("Error logging in:", error);
     }
   };
