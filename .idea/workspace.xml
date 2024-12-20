@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="fix header and product page UI">
+    <list default="true" id="05402b73-b8bb-4acd-84d0-30a66ff7cdce" name="Changes" comment="update productControllers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/productControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/productControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ProductPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/SingleProductPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/cartControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/cartControllers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1734599825099</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update productControllers">
+      <created>1734601006838</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1734601006838</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +230,7 @@
     <MESSAGE value="update addToCart" />
     <MESSAGE value="update Profile" />
     <MESSAGE value="fix header and product page UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix header and product page UI" />
+    <MESSAGE value="update productControllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="update productControllers" />
   </component>
 </project>
