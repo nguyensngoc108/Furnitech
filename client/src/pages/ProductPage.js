@@ -161,14 +161,14 @@ function ProductPage() {
                   </p>
                 </div>
 
-                {/* <Button
+                <Button
                   text="Add To Cart"
                   onClick={(e) => {
                     e.stopPropagation();
                     handleAddToCart(product._id);
                   }}
                   className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
-                /> */}
+                />
               </div>
             ))}
           </div>
